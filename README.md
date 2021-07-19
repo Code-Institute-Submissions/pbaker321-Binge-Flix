@@ -52,4 +52,19 @@ The Wireframes can be found [here](https://balsamiq.cloud/sfaewk0/pyqefrd).
 Please note. There is a big change in the wireframes compared to the end result. This happened as i didn't anticipate the difficulty in implementing the original plan.
 
 
+## Features
+
+### Exsisting Features
+
+1. landing Page 
+2. Log In Page
+3. Register Page
+4. My Aquariums Page - List of registered Aquariums with basic details
+5. Manage My Aquariums Page - Where the User can Create, Update or Delete Aquariums. 
+6. Aquarium Tracker Page - A Chart with the Aquariums History
+7. Input form Page - Form for when user is either creating or updating
+8. Nav Bar - So User can easily navigate the site
+9. Footer with links to Social Media
+10. Safety Modal - Appears when the user is about to make changes, makes sure user is happy to proceed
+11. Aquarium warning sign - After User has input new test results. will warn user if chemical levels are too high
 
