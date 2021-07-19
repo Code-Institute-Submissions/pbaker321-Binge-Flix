@@ -47,7 +47,7 @@ user will also have records of stocking levels for their aquariums.
 
   
 
-The Wireframes can be found [here](https://balsamiq.cloud/sfaewk0/pyqefrd).
+The Wireframes can be found [here](https://www.figma.com/file/jBkiAnX3MkBntuE067MwWV/Inspire-Fish-Landing?node-id=0%3A1).
 
 Please note. There is a big change in the wireframes compared to the end result. This happened as i didn't anticipate the difficulty in implementing the original plan.
 
