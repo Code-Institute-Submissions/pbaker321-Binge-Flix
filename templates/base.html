@@ -19,19 +19,19 @@
         <!-- Dropdown Structure -->
         <ul id="dropdown1" class="dropdown-content">
             <li><a href="#!">Home</a></li>
-            <li><a href="#!">Trending</a></li>
+            <li><a href="{{ url_for('get_shows') }}">Trending</a></li>
             <li><a href="#!">Profile</a></li>
             <li><a href="#!">Log In</a></li>
             <li><a href="#!">Log Out</a></li>
-            <li><a href="#!">Register</a></li>
+            <li><a href="{{ url_for('register') }}">Register</a></li>
         </ul>
         <nav>
-            <div class="nav-wrapper">
-            <a href="#!" class="brand-logo">Binge Flix</a>
-            <ul class="right hide-on-med-and-down">
-                <!-- Dropdown Trigger -->
-                <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Menu<i class="fas fa-bars right"></i></a></li>
-            </ul>
+            <div class="nav-wrapper nav-bar">
+                <a href="#!" class="brand-logo logo">Binge Flix</a>
+                <ul class="right hide-on-med-and-down">
+                    <!-- Dropdown Trigger -->
+                    <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Menu<i class="fas fa-bars right"></i></a></li>
+                </ul>
             </div>
         </nav>
           
@@ -39,7 +39,35 @@
 
     {% block content %}
     {% endblock %}
+    <!-- Footer -->
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Binge Flix</h5>
+                    <p class="grey-text text-lighten-4">Where once is never enough</p>
+                </div>
+                <!-- Social Media -->
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Follow Us...</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
+                        <li><a class="grey-text text-lighten-3" href="https://www.twitter.com/" target="_blank"><i class="fab fa-twitter-square"></i></a></li>
+                        <li><a class="grey-text text-lighten-3" href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                        <li><a class="grey-text text-lighten-3" href="https://www.pinterest.com/" target="_blank"><i class="fab fa-pinterest-square"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2021 Copyright Binge Flix
+                <a class="grey-text text-lighten-4 right" href="#!"><i class="fas fa-envelope"></i>Contact Us</a>
+            </div>
+        </div>
+    </footer>
 
+    <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" 
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
