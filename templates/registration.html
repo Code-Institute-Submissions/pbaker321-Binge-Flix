@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h3 class="center-align register-header">Register Now!</h3>
+
+    <div class="row">
+        <form class="col s12 m8 offset-m2">
+            <div class="card-panel main-card">
+                <div class="row">
+                    <span class="centre-align s12">Register</span>
+                </div>
+                <!-- Username -->
+                <div class="row">
+                    <div class="input-field col s8 offset-m2">
+                        <i class="fas fa-user prefix"></i>
+                        <input id="username" name="username" type="text" class="validate">
+                        <label for="username">UserName</label>
+                    </div>
+                </div>
+                <!-- Password -->
+                <div class="row">
+                    <div class="input-field col s8 offset-m2">
+                        <i class="fas fa-key prefix"></i>
+                        <input id="password" name="password" type="password" class="validate">
+                        <label for="password">Password</label>
+                    </div>
+                </div>
+                <!-- Users Favourite Genre -->
+                <div class="row">
+                    <div class="input-field col s8 offset-m2">
+                        <i class="fas fa-film prefix"></i>
+                        <input id="favourite_genre" name="favourite_genre" type="text" class="validate">
+                        <label for="favourite_genre">Favourite Genre</label>
+                    </div>
+                </div>
+                <!-- Submit Button -->
+                <div class="row">
+                    <button type="submit" class="col s2 offset-m5 btn-large">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}
