@@ -14,13 +14,36 @@
 </head>
 <body>
 
+    <header>
+
+        <!-- Dropdown Structure -->
+        <ul id="dropdown1" class="dropdown-content">
+            <li><a href="#!">Home</a></li>
+            <li><a href="#!">Trending</a></li>
+            <li><a href="#!">Profile</a></li>
+            <li><a href="#!">Log In</a></li>
+            <li><a href="#!">Log Out</a></li>
+            <li><a href="#!">Register</a></li>
+        </ul>
+        <nav>
+            <div class="nav-wrapper">
+            <a href="#!" class="brand-logo">Binge Flix</a>
+            <ul class="right hide-on-med-and-down">
+                <!-- Dropdown Trigger -->
+                <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Menu<i class="fas fa-bars right"></i></a></li>
+            </ul>
+            </div>
+        </nav>
+          
+    </header>
+
     {% block content %}
     {% endblock %}
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" 
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script
     {% block scripts %}
     {% endblock %}
 </body>
