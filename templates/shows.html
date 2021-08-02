@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bing Flix</title>
+</head>
+<body>
+    {% for show in shows %}
+        {{ show.show_name }}<br>
+        {{ show.genre }}<br>
+        {{ show.seasons }}<br>
+        {{ show.platform }}<br>
+        {{ show.starring }}<br>
+    {% endfor %}
+</body>
+</html>
