@@ -19,6 +19,10 @@ mongo = PyMongo(app)
 
 #----- Home Page -----
 @app.route("/")
+def home():
+    return render_template("home.html")
+
+
 @app.route("/get_shows")
 def get_shows():
     shows = mongo.db.shows.find()
@@ -48,6 +52,11 @@ def register():
         session["user"] = request.form.get("username").lower()
         flash("Welcome! You are now registered!")
     return render_template("registration.html")
+
+
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    return render_template("login.html")
 
 
 if __name__ == "__main__":
