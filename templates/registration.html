@@ -34,7 +34,16 @@
                 </div>
                 <!-- Submit Button -->
                 <div class="row">
-                    <button type="submit" class="col s2 offset-m5 btn-large">Register Now</button>
+                    <a href="{{ url_for('login') }}"
+                        class="col s12 m2 offset-m5 btn center-align">
+                        Log in <i class="fas fa-sign-in-alt"></i>
+                    </a>
+                </div>
+                <div class="row center-align">
+                    <p>
+                    Already a Member? 
+                    <a href="{{ url_for('login') }}" class="redirect-text">Log In here!</a>
+                    </p>
                 </div>
             </div>
         </form>
