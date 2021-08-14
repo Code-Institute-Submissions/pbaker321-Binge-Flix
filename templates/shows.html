@@ -1,6 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
 
+    <div class="row center-align">
+        <h1>Trending Shows</h1>
+    </div>
     {% for show in shows %}
         {{ show.show_name }}<br>
         {{ show.genre }}<br>

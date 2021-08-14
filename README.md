@@ -84,3 +84,6 @@ The Wireframes can be found [here](https://www.figma.com/file/5F65S2c3ZgqiyoLLFo
     * User can search by Key words
 
 
+## Issues
+
+A problem when registering or logging in, there seemed to be connection problems with the database. I realised I used incorrect code for the submit button.
