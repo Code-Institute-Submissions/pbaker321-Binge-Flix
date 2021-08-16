@@ -20,14 +20,14 @@
         <ul id="dropdown1" class="dropdown-content">
             <li><a href="{{ url_for('home') }}">Home</a></li>
             <li><a href="{{ url_for('get_shows') }}">Trending</a></li>
-            <li><a href="#!">Profile</a></li>
+            <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
             <li><a href="{{ url_for('login') }}">Log In</a></li>
             <li><a href="#!">Log Out</a></li>
             <li><a href="{{ url_for('register') }}">Register</a></li>
         </ul>
         <nav>
             <div class="nav-wrapper nav-bar">
-                <a href="#!" class="brand-logo logo">Binge Flix</a>
+                <a href="{{ url_for('home') }}" class="brand-logo logo">Binge Flix</a>
                 <ul class="right hide-on-med-and-down">
                     <!-- Dropdown Trigger -->
                     <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Menu<i class="fas fa-bars right"></i></a></li>
@@ -38,7 +38,7 @@
     </header>
 
     <section>
-        <!-- Flash Maessages -->
+        <!-- Flash Messages -->
         {% with messages = get_flashed_messages() %}
             {% if messages %}
                 {% for message in messages %}
@@ -50,6 +50,7 @@
         {% endwith %}
     </section>
 
+    <!-- Main Content -->
     <main class="container">
         {% block content %}
         {% endblock %}
