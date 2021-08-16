@@ -31,3 +31,7 @@ body {
 .flashes {
     line-height: 3;
 }
+
+.show-panel {
+    border-radius: 10px;
+}

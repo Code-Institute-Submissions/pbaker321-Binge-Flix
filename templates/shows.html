@@ -4,12 +4,22 @@
     <div class="row center-align">
         <h1>Trending Shows</h1>
     </div>
+
+    
+
+ 
     {% for show in shows %}
-        {{ show.show_name }}<br>
-        {{ show.genre }}<br>
-        {{ show.seasons }}<br>
-        {{ show.platform }}<br>
-        {{ show.starring }}<br>
+    <div class="row">
+        <div class="col s12 m5">
+            <div class="card-panel show-panel">         
+                    <h5 class="center-align">{{ show.show_name }}</h5><br>
+                    <strong>Genre: </strong>{{ show.genre }}<br>
+                    <strong>No. Seasons: </strong>{{ show.seasons }}<br>
+                    <strong>Platform: </strong>{{ show.platform }}<br>
+                    <strong>Starring: </strong>{{ show.starring }}<br>  
+            </div>
+        </div>
+    </div>   
     {% endfor %}
 
 {% endblock %}
