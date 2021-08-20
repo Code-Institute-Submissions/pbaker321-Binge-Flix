@@ -32,18 +32,21 @@
                         <label for="favourite_genre">Favourite Genre (Optional)</label>
                     </div>
                 </div>
-                <!-- Submit Button -->
-                <div class="row">
-                    <button type="submit" class="col s4 center-align btn-large text-shadow">
-                        Register Now <i class="fas fa-sign-in-alt"></i>
+            </div>
+            <!-- Submit Button -->
+            <div class="row">
+                <div class="col s12 center-align">
+                    <button class="btn waves-effect waves-light" type="submit">
+                        Submit
+                        <i class="far fa-check-circle"></i>
                     </button>
                 </div>
-                <div class="row center-align">
-                    <p>
+            </div>
+            <div class="row center-align">
+                <p>
                     Already a Member? 
                     <a href="{{ url_for('login') }}" class="redirect-text">Log In here!</a>
-                    </p>
-                </div>
+                </p>
             </div>
         </form>
     </div>
