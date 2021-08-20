@@ -16,7 +16,7 @@
 
     <header>
 
-        <!-- Dropdown Structure -->
+        <!-- Navbar -->
         <nav>
             <div class="nav-wrapper nav-bar">
               <a href="{{ url_for('home') }}" class="brand-logo">Binge Flix</a>
@@ -36,6 +36,7 @@
             </div>
           </nav>
 
+        <!-- Mobile Sidenav -->
         <ul class="sidenav" id="mobile-demo">
             <li><a href="{{ url_for('home') }}">Home</a></li>
             {% if session.user %}
@@ -82,10 +83,10 @@
                 <div class="col l4 offset-l2 s12">
                     <h5 class="white-text">Follow Us...</h5>
                     <ul>
-                        <li><a class="grey-text text-lighten-3" href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
-                        <li><a class="grey-text text-lighten-3" href="https://www.twitter.com/" target="_blank"><i class="fab fa-twitter-square"></i></a></li>
-                        <li><a class="grey-text text-lighten-3" href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                        <li><a class="grey-text text-lighten-3" href="https://www.pinterest.com/" target="_blank"><i class="fab fa-pinterest-square"></i></a></li>
+                        <li><a class="footer-media" href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
+                        <li><a class="footer-media" href="https://www.twitter.com/" target="_blank"><i class="fab fa-twitter-square"></i></a></li>
+                        <li><a class="footer-media" href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                        <li><a class="footer-media" href="https://www.pinterest.com/" target="_blank"><i class="fab fa-pinterest-square"></i></a></li>
                     </ul>
                 </div>
             </div>

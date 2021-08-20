@@ -3,7 +3,14 @@
 body {
     background: radial-gradient(64.72% 127.99% at 50% 50%, #ff9f1c 42.99%, #01161E 100%);
     font-family: 'Roboto';
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
+
+main {
+    flex: 1 0 auto;
+  }
 
 .page-footer {
     background-color: black;
@@ -58,4 +65,8 @@ body {
 .quote {
     margin: 20px;
     padding: 10px;
+}
+
+.footer-media {
+    color: #fafafa;
 }
