@@ -5,18 +5,20 @@
 
         <!-- Add a show form-->
         <div class="row">
-                <form class="col s12" method="POST" action="">
+                <form class="col s12" method="POST" action="{{ url_for('add_shows') }}">
                     <div class="card-panel main-card">
+                        <!-- Show Name -->
                         <div class="row">
-                            <div class="input-field col s12">
+                            <div class="input-field col s8 offset-m2">
                                 <i class="fas fa-pencil-alt"></i>
                                 <input id="show_name" name="show_name" type="text" class="validate" required>
                                 <label for="show_name">Show Name</label>
                             </div>
                         </div>
+                        <!-- Show Genre -->
                         <div class="row">
-                            <div class="input-field col s12">
-                                <i class="fas fa-dna prefix"></i>
+                            <div class="input-field col s8 offset-m2">
+                                <i class="fas fa-pencil-alt"></i>
                                 <select id="genre_name" name="genre_name" class="validate" required>
                                     <option value="" disabled selected>Select Genre</option>
                                     {% for genre in genre_catergory %}
@@ -26,10 +28,11 @@
                                 <label for="genre_name">Genre</label>
                             </div>
                         </div>
+                        <!-- Number of Seasons -->
                         <div class="row">
-                            <div class="input-field col s12">
+                            <div class="input-field col s8 offset-m2">
                                 <i class="fas fa-pencil-alt"></i>
-                                <select id="seasons" name="seasons">
+                                <select id="seasons" name="seasons" class="validate" required>
                                     <option value="" disabled selected>Choose your option</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -43,10 +46,11 @@
                                 <label for="seasons">Number of Seasons</label>
                              </div>
                         </div>
+                        <!-- Show Platflorm -->
                         <div class="row">
-                            <div class="input-field col s12">
+                            <div class="input-field col s8 offset-m2">
                                 <i class="fas fa-pencil-alt"></i>
-                                <select id="platform" name="platform">
+                                <select id="platform" name="platform" class="validate" required>
                                     <option value="" disabled selected>Choose your platform</option>
                                     <option value="1">Netflix</option>
                                     <option value="2">Hulu</option>
@@ -57,12 +61,22 @@
                                 <label for="platform">Platform</label>
                              </div>
                         </div>
+                        <!-- Shows Starring actor -->
                         <div class="row">
-                            <div class="input-field col s12">
+                            <div class="input-field col s8 offset-m2">
                                 <i class="fas fa-pencil-alt"></i>
                                 <input id="starring" name="starring" type="text" class="validate" required>
                                 <label for="starring">Starring</label>
                             </div>
+                        </div>
+                    </div>
+                    <!-- Submit Button -->
+                    <div class="row">
+                        <div class="col s12 center-align">
+                            <button class="btn waves-effect waves-light" type="submit">
+                                Submit
+                                <i class="far fa-check-circle"></i>
+                            </button>
                         </div>
                     </div>
                 </form>

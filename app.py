@@ -24,6 +24,7 @@ def home():
     return render_template("home.html")
 
 
+# Trending Shows
 @app.route("/get_shows")
 def get_shows():
     shows = mongo.db.shows.find()
@@ -107,8 +108,22 @@ def logout():
     return redirect(url_for("login"))
 
 
-@app.route("/add_shows")
+# Add a Show
+@app.route("/add_shows", methods=["GET", "POST"])
 def add_shows():
+    if request.method == "POST":
+        show = {
+            "show_name": request.form.get("show_name"),
+            "genre_name": request.form.get("genre_name"),
+            "seasons": request.form.get("seasons"),
+            "platform": request.form.get("platform"),
+            "starring": request.form.get("starring"),
+            "posted_by": session["user"]
+        }
+        mongo.db.shows.insert_one(show)
+        flash("You added a show!")
+        return redirect(url_for("get_shows"))
+
     genre_catergory = mongo.db.genre_catergory.find().sort("genre_name", 1)
     return render_template("add_shows.html", genre_catergory=genre_catergory)
 
