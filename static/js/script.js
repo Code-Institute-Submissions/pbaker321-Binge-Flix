@@ -1,7 +1,6 @@
 $(document).ready(function () {    
     $(".dropdown-trigger").dropdown();
     $('select').formSelect();        
-});
 
 /*
 Taken from the course for the dropdown menu
