@@ -101,7 +101,7 @@ def profile(username):
 # User Logout
 @app.route("/logout")
 def logout():
-    #Remove user from session cookies
+    # Remove user from session cookies
     flash("You are now logged out")
     session.pop("user")
     return redirect(url_for("login"))
@@ -109,7 +109,8 @@ def logout():
 
 @app.route("/add_shows")
 def add_shows():
-    return render_template("add_shows.html")
+    genre_catergory = mongo.db.genre_catergory.find().sort("genre_name", 1)
+    return render_template("add_shows.html", genre_catergory=genre_catergory)
 
 
 if __name__ == "__main__":

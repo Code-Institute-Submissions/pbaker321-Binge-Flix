@@ -3,19 +3,65 @@
 
     <h1 class="center-align">Add A Show</h1>
 
+        <!-- Add a show form-->
         <div class="row">
                 <form class="col s12" method="POST" action="">
                     <div class="card-panel main-card">
                         <div class="row">
                             <div class="input-field col s12">
-                                <i class="fas fa-tv prefix"></i>
-                                <input id="icon_prefix" type="text" class="validate">
-                                <label for="icon_prefix">Show Name</label>
+                                <i class="fas fa-pencil-alt"></i>
+                                <input id="show_name" name="show_name" type="text" class="validate" required>
+                                <label for="show_name">Show Name</label>
                             </div>
+                        </div>
+                        <div class="row">
                             <div class="input-field col s12">
                                 <i class="fas fa-dna prefix"></i>
-                                <input id="icon_telephone" type="tel" class="validate">
-                                <label for="icon_telephone">Genre</label>
+                                <select id="genre_name" name="genre_name" class="validate" required>
+                                    <option value="" disabled selected>Select Genre</option>
+                                    {% for genre in genre_catergory %}
+                                        <option value="{{ genre.genre_name }}">{{ genre.genre_name }}</option>
+                                    {% endfor %}
+                                </select>
+                                <label for="genre_name">Genre</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <i class="fas fa-pencil-alt"></i>
+                                <select id="seasons" name="seasons">
+                                    <option value="" disabled selected>Choose your option</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8 or more...</option>
+                                </select>
+                                <label for="seasons">Number of Seasons</label>
+                             </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <i class="fas fa-pencil-alt"></i>
+                                <select id="platform" name="platform">
+                                    <option value="" disabled selected>Choose your platform</option>
+                                    <option value="1">Netflix</option>
+                                    <option value="2">Hulu</option>
+                                    <option value="3">Sky</option>
+                                    <option value="4">HBO</option>
+                                    <option value="5">Amazon Prime</option>
+                                </select>
+                                <label for="platform">Platform</label>
+                             </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <i class="fas fa-pencil-alt"></i>
+                                <input id="starring" name="starring" type="text" class="validate" required>
+                                <label for="starring">Starring</label>
                             </div>
                         </div>
                     </div>
