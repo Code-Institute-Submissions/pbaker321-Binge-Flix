@@ -8,14 +8,31 @@
     {% for show in shows %}
     <!-- Card Panel with SHow information -->
     <div class="row">
-        <div class="col s12 m5">
-            <div class="card-panel main-card">         
+        <div class="col s12 m6">
+            <div class="card-panel main-card">
+                <div class="row">         
                     <h5 class="center-align">{{ show.show_name }}</h5><br>
                     <strong>Genre: </strong>{{ show.genre_name }}<br>
                     <strong>No. Seasons: </strong>{{ show.seasons }}<br>
                     <strong>Platform: </strong>{{ show.platform }}<br>
                     <strong>Starring: </strong>{{ show.starring }}<br>
-                    <p><em>Posted by: {{ show.posted_by }}</em></p> 
+                    <strong>Review: </strong>{{ show.review }}<br>
+                    <p><em>Posted by: {{ show.posted_by }}</em></p>
+                </div>
+                <div class="row">
+                    <p>
+                        <label>
+                            <span>Like</span>
+                            <input class="with-gap" name="group3" type="radio" checked />
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <span>Dislike</span>
+                            <input class="with-gap" name="group3" type="radio" checked />
+                        </label>
+                    </p>
+                </div> 
             </div>
             <!-- Edit show button -->
             {% if session.user|lower == show.posted_by|lower %}

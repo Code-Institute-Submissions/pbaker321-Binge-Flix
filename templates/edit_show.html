@@ -77,6 +77,18 @@
                                 <label for="starring">Starring</label>
                             </div>
                         </div>
+                        <!-- Review Show Input -->
+                        <div class="row">
+                            <div class="input-field col s8 offset-m2">
+                                <i class="fas fa-pencil-alt"></i>
+                                <textarea id="review" name="review" value="{{ show.review }}"
+                                class="materialize-textarea" minlength="20" 
+                                maxlength="400" required></textarea>
+                                <label for="review">
+                                    Review
+                                </label>
+                            </div>
+                        </div>
                     </div>
                     <!-- Submit Button -->
                     <div class="row">

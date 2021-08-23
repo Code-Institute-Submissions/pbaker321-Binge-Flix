@@ -119,6 +119,7 @@ def add_shows():
             "seasons": request.form.get("seasons"),
             "platform": request.form.get("platform"),
             "starring": request.form.get("starring"),
+            "review": request.form.get("review"),
             "posted_by": session["user"]
         }
         mongo.db.shows.insert_one(show)
@@ -141,6 +142,7 @@ def edit_show(show_id):
             "seasons": request.form.get("seasons"),
             "platform": request.form.get("platform"),
             "starring": request.form.get("starring"),
+            "review": request.form.get("review"),
             "posted_by": session["user"]
         }
         mongo.db.shows.update({"_id": ObjectId(show_id)}, submit)
