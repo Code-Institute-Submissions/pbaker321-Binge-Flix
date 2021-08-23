@@ -19,20 +19,6 @@
                     <strong>Review: </strong>{{ show.review }}<br>
                     <p><em>Posted by: {{ show.posted_by }}</em></p>
                 </div>
-                <div class="row">
-                    <p>
-                        <label>
-                            <span>Like</span>
-                            <input class="with-gap" name="group3" type="radio" checked />
-                        </label>
-                    </p>
-                    <p>
-                        <label>
-                            <span>Dislike</span>
-                            <input class="with-gap" name="group3" type="radio" checked />
-                        </label>
-                    </p>
-                </div> 
             </div>
             <!-- Edit show button -->
             {% if session.user|lower == show.posted_by|lower %}
