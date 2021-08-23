@@ -11,7 +11,8 @@
                         <div class="row">
                             <div class="input-field col s8 offset-m2">
                                 <i class="fas fa-pencil-alt"></i>
-                                <input id="show_name" name="show_name" type="text" class="validate" required>
+                                <input id="show_name" name="show_name" value="{{ show.show_name }}"
+                                 type="text" class="validate" required>
                                 <label for="show_name">Show Name</label>
                             </div>
                         </div>
@@ -20,9 +21,13 @@
                             <div class="input-field col s8 offset-m2">
                                 <i class="fas fa-pencil-alt"></i>
                                 <select id="genre_name" name="genre_name" class="validate" required>
-                                    <option value="" disabled selected>Select Genre</option>
+                                    <option value="" disabled>Select Genre</option>
                                     {% for genre in genre_catergory %}
-                                        <option value="{{ genre.genre_name }}">{{ genre.genre_name }}</option>
+                                        {% if genre.genre_name == show.genre_name %}
+                                            <option value="{{ genre.genre_name }}" selected>{{ genre.genre_name }}</option>
+                                        {% else %}
+                                            <option value="{{ genre.genre_name }}">{{ genre.genre_name }}</option>
+                                        {% endif %}
                                     {% endfor %}
                                 </select>
                                 <label for="genre_name">Genre</label>
@@ -33,7 +38,7 @@
                             <div class="input-field col s8 offset-m2">
                                 <i class="fas fa-pencil-alt"></i>
                                 <select id="seasons" name="seasons" class="validate" required>
-                                    <option value="" disabled selected>Choose your option</option>
+                                    <option value="{{ show.seasons }}" disabled selected>{{ show.seasons }}</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -51,12 +56,14 @@
                             <div class="input-field col s8 offset-m2">
                                 <i class="fas fa-pencil-alt"></i>
                                 <select id="platform" name="platform" class="validate" required>
-                                    <option value="" disabled selected>Choose your platform</option>
-                                    <option value="1">Netflix</option>
-                                    <option value="2">Hulu</option>
-                                    <option value="3">Sky</option>
-                                    <option value="4">HBO</option>
-                                    <option value="5">Amazon Prime</option>
+                                    <option value="" disabled>Choose your platform</option>
+                                    {% for platform in platform_catergory %}
+                                        {% if platform.platform_name == show.platform_name %}
+                                            <option value="{{ platform.platform_name }}" selected>{{ platform.platform_name }}</option>
+                                        {% else %}
+                                            <option value="{{ platform.platform_name }}">{{ platform.platform_name }}</option>
+                                        {% endif %}
+                                    {% endfor %}
                                 </select>
                                 <label for="platform">Platform</label>
                              </div>
@@ -65,7 +72,8 @@
                         <div class="row">
                             <div class="input-field col s8 offset-m2">
                                 <i class="fas fa-pencil-alt"></i>
-                                <input id="starring" name="starring" type="text" class="validate" required>
+                                <input id="starring" name="starring" value="{{ show.starring }}"
+                                 type="text" class="validate" required>
                                 <label for="starring">Starring</label>
                             </div>
                         </div>
@@ -73,7 +81,11 @@
                     <!-- Submit Button -->
                     <div class="row">
                         <div class="col s12 center-align">
-                            <button class="btn waves-effect waves-light" type="submit">
+                            <a href="{{ url_for('get_shows') }}" class="btn red">
+                                Cancel
+                                <i class="far fa-times-circle"></i>
+                            </a>
+                            <button class="btn green" type="submit">
                                 Edit
                                 <i class="far fa-check-circle"></i>
                             </button>

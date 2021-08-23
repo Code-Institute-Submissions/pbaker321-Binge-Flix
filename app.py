@@ -94,7 +94,8 @@ def profile(username):
         {"username": session["user"]})["username"]
 
     if session["user"]:
-        return render_template("profile.html", username=username)
+        shows = list(mongo.db.shows.find().sort("_id", -1))
+        return render_template("profile.html", username=username, shows=shows)
 
     return redirect(url_for("login"))
 
@@ -125,15 +126,32 @@ def add_shows():
         return redirect(url_for("get_shows"))
 
     genre_catergory = mongo.db.genre_catergory.find().sort("genre_name", 1)
-    return render_template("add_shows.html", genre_catergory=genre_catergory)
+    platform_catergory = mongo.db.platform_catergory.find().sort(
+        "platform_name", 1)
+    return render_template(
+        "add_shows.html", genre_catergory=genre_catergory, platform_catergory=platform_catergory)
 
 
 @app.route("/edit-show/<show_id>", methods=["GET", "POST"])
 def edit_show(show_id):
-    show = mongo.db.shows.find_one({"_id": ObjectId(show_id)})
+    if request.method == "POST":
+        submit = {
+            "show_name": request.form.get("show_name"),
+            "genre_name": request.form.get("genre_name"),
+            "seasons": request.form.get("seasons"),
+            "platform": request.form.get("platform"),
+            "starring": request.form.get("starring"),
+            "posted_by": session["user"]
+        }
+        mongo.db.shows.update({"_id": ObjectId(show_id)}, submit)
+        flash("You edited a show!")
 
-    genre_catergory = mongo.db.genre_catergory.find().sort("genre_name", 1)
-    return render_template("edit_show.html", show=show, genre_catergory=genre_catergory)
+    show = mongo.db.shows.find_one({"_id": ObjectId(show_id)})
+    genre_catergory = mongo.db.genre_catergory.find().sort(
+        "genre_name", 1)
+    platform_catergory = mongo.db.platform_catergory.find().sort(
+        "platform_name", 1)
+    return render_template("edit_show.html", show=show, genre_catergory=genre_catergory, platform_catergory=platform_catergory)
 
 
 if __name__ == "__main__":
