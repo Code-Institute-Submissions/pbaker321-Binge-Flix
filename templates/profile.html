@@ -12,4 +12,24 @@
         </div>
     </div>
 
+    {% for show in shows if session.user|lower == show.posted_by|lower %}
+    <!-- Card Panel with SHow information -->
+    <div class="row">
+        <div class="col s12 m5">
+            <div class="card-panel main-card">         
+                    <h5 class="center-align">{{ show.show_name }}</h5><br>
+                    <strong>Genre: </strong>{{ show.genre_name }}<br>
+                    <strong>No. Seasons: </strong>{{ show.seasons }}<br>
+                    <strong>Platform: </strong>{{ show.platform }}<br>
+                    <strong>Starring: </strong>{{ show.starring }}<br>
+                    <p><em>Posted by: {{ show.posted_by }}</em></p> 
+            </div>
+            <!-- Edit show button -->
+            <div class="row">
+                <a href="{{ url_for('edit_show', show_id=show._id) }}" class="btn-floating btn-large waves-effect waves-light red">Edit</a>
+            </div>
+        </div>
+    </div>   
+    {% endfor %}
+
 {% endblock %}
