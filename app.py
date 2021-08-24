@@ -133,6 +133,7 @@ def add_shows():
         "add_shows.html", genre_catergory=genre_catergory, platform_catergory=platform_catergory)
 
 
+# Edit Show
 @app.route("/edit-show/<show_id>", methods=["GET", "POST"])
 def edit_show(show_id):
     if request.method == "POST":
@@ -154,6 +155,22 @@ def edit_show(show_id):
     platform_catergory = mongo.db.platform_catergory.find().sort(
         "platform_name", 1)
     return render_template("edit_show.html", show=show, genre_catergory=genre_catergory, platform_catergory=platform_catergory)
+
+
+# Delete Shows from DB
+@app.route("/delete_show/<show_id>")
+def delete_show(show_id):
+    mongo.db.shows.remove({"_id": ObjectId(show_id)})
+    flash("Show Has Been Deleted!")
+    return redirect(url_for("get_shows"))
+
+
+@app.route("/like", methods=["GET", "POST"])
+def like(show_likes):
+    if request.method == "POST":
+        mongo.db.shows.update_one(show_likes=1)
+        flash("You liked this Show")
+    return redirect(url_for("get_shows"))
 
 
 if __name__ == "__main__":

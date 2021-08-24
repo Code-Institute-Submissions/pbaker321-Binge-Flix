@@ -5,9 +5,16 @@
     <div class="row">
         <div class="col s12 m8 offset-m2">
             <div class="card-panel main-card">
-                <h3 class="center-align">
-                    {{ username }}'s Profile
-                </h3>
+                <div class="row">
+                    <h3 class="center-align">
+                        {{ username }}'s Profile
+                    </h3>
+                </div>
+                <div class="row">
+                    <h5 class="center-align">
+                        My favourite genre is {{ genre }}
+                    </h5>
+                </div>
             </div>
         </div>
     </div>
@@ -29,6 +36,7 @@
             {% if session.user|lower == show.posted_by|lower %}
             <div class="row">
                 <a href="{{ url_for('edit_show', show_id=show._id) }}" class="btn-floating btn-large waves-effect waves-light red">Edit</a>
+                <a href="{{ url_for('delete_show', show_id=show._id) }}" class="btn-floating btn-large waves-effect waves-light red">Delete</a>
             </div>
             {% endif %}
         </div>
