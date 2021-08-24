@@ -21,8 +21,8 @@
                 </div>
                 <div class="row">
                     <div class="col s12 m6">
-                        <button href="{{ url_for('like') }}">Like</button>
-                        <span>0</span>
+                        <a href="{{ url_for('like', show_id=show._id) }}" class="btn">Like</a>
+                        <span>{{ show.show_likes }}</span>
                     </div>
                 </div>
             </div>

@@ -165,12 +165,18 @@ def delete_show(show_id):
     return redirect(url_for("get_shows"))
 
 
-@app.route("/like", methods=["GET", "POST"])
-def like(show_likes):
+# Like a Show
+@app.route("/like/<show_id>", methods=["GET", "POST"])
+def like(show_id):
     if request.method == "POST":
-        mongo.db.shows.update_one(show_likes=1)
-        flash("You liked this Show")
-    return redirect(url_for("get_shows"))
+        likes = {
+            "show_likes": request.form.update("show_likes"+1),
+        }
+        mongo.db.shows.update({"_id": ObjectId(show_id)}, likes)
+        flash("You edited a show!")
+
+    show = mongo.db.shows.find_one({"_id": ObjectId(show_id)})
+    return render_template("shows.html", show=show)
 
 
 if __name__ == "__main__":
