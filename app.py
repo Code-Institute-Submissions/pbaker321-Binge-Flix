@@ -172,7 +172,7 @@ def like(show_id):
         likes = {
             "show_likes": request.form.update("show_likes"+1),
         }
-        mongo.db.shows.update({"_id": ObjectId(show_id)}, likes)
+        mongo.db.shows.update({"_id": ObjectId(show_id)}, likes=likes)
         flash("You edited a show!")
 
     show = mongo.db.shows.find_one({"_id": ObjectId(show_id)})
