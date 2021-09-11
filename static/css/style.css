@@ -1,7 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,700;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,900&display=swap');
 
 body {
-    background: url(../Images/remote-control-table-with-tv-background\(1\).jpg);
+    background: url(../Images/remote-control-table-with-tv-background\(2\).jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     font-family: 'Roboto';
     display: flex;
     min-height: 100vh;
@@ -13,27 +15,32 @@ main {
   }
 
 .page-title {
-    color: #fafafa;
-    font-weight: 500;
-    text-shadow: #fafafa;
+    color: #001219;
+    font-size: 150%;
+    font-weight: 900;
+    font-style: italic;
+    text-shadow: 2px 2px 2px rgba(111, 111, 114, 0.5);
 }
 
 .page-footer {
     margin-top: 10px;
-    background-color: black;
+    background-color: #001219;
 }
 
 .nav-bar {
-    background-color: black;
+    background-color: #001219;
 }
 
-.side-nav {
+.nav-style {
+    background-color: #fafafa;
+    color: #001219;
+    text-shadow: 2px 2px 2px rgba(213, 212, 214, 0.5);
     margin-right: 20px;
 }
 
 .brand-logo {
     margin-left: 20px;
-    text-shadow: 2px 2px 2px rgba(173, 2, 2, 0.5);
+    text-shadow: 2px 2px 2px rgba(213, 212, 214, 0.5);
 }
 
 .register-header {
@@ -42,7 +49,7 @@ main {
 
 .main-card {
     background-color: #fafafa;
-    color: black;
+    color: #001219;
     margin-top: 25px;
     margin-bottom: 25px;
     border-radius: 10px;
@@ -53,6 +60,8 @@ main {
 }
 
 .show-panel {
+    background-color: #fafafa;
+    color: #001219;
     border: #001219;
     border-radius: 10px;
 }
@@ -67,7 +76,7 @@ main {
   }
 
 .btn {
-    background-color: #e71d36;
+    background-color: #005f73;
     color: #fafafa;
     border-radius: 10px;
     margin: 10px;
@@ -75,9 +84,19 @@ main {
 
 .btn:hover {
     background-color: #fdfffc;
-    color: black;
+    color: #001219;
     transform: scale(1.1);
     transition: 6.0;
+}
+
+.show-btn {
+    background-color: #005f73;
+    color: #fafafa;
+    border-color: #001219;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px rgba(9, 0, 58, 0.5);
+    margin: 10px;
+    padding: 10px;
 }
 
 .like-btn {
@@ -86,7 +105,7 @@ main {
 
 .like-btn:hover {
     background-color: #fdfffc;
-    color: black;
+    color: #001219;
     transform: scale(1.1);
     transition: 6.0;
 }
