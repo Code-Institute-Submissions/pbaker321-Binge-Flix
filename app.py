@@ -95,7 +95,9 @@ def profile(username):
 
     if session["user"]:
         shows = list(mongo.db.shows.find().sort("_id", -1))
-        return render_template("profile.html", username=username, shows=shows)
+        users = mongo.db.user.find()
+        return render_template(
+            "profile.html", username=username, shows=shows, users=users)
 
     return redirect(url_for("login"))
 
@@ -120,6 +122,7 @@ def add_shows():
             "platform": request.form.get("platform"),
             "starring": request.form.get("starring"),
             "review": request.form.get("review"),
+            "show_image": request.form.get("show_image"),
             "posted_by": session["user"]
         }
         mongo.db.shows.insert_one(show)
@@ -144,6 +147,7 @@ def edit_show(show_id):
             "platform": request.form.get("platform"),
             "starring": request.form.get("starring"),
             "review": request.form.get("review"),
+            "show_image": request.form.get("show_image"),
             "posted_by": session["user"]
         }
         mongo.db.shows.update({"_id": ObjectId(show_id)}, submit)
@@ -174,6 +178,17 @@ def like(show_id):
     )
     likes = mongo.db.shows.find_one_or_404({'_id': ObjectId(show_id)})
     return render_template('shows.html', like=likes)
+
+
+# Disike a Show
+@app.route('/dislike/<show_id>')
+def dislike(show_id):
+    mongo.db.shows.find_one_and_update(
+        {'_id': ObjectId(show_id)},
+        {'$inc': {'dislikes': 1}}
+    )
+    dislikes = mongo.db.shows.find_one_or_404({'_id': ObjectId(show_id)})
+    return render_template('shows.html', dislike=dislikes)
 
 
 if __name__ == "__main__":

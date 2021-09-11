@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h1 class="center-align">Add A Show</h1>
+    <h1 class="center-align page-title">Add A Show</h1>
 
         <!-- Add a show form-->
         <div class="row">
@@ -76,6 +76,14 @@
                                 <label for="review">
                                     Review
                                 </label>
+                            </div>
+                        </div>
+                        <!-- Shows Image -->
+                        <div class="row">
+                            <div class="input-field col s8 offset-m2">
+                                <i class="fas fa-image prefix"></i>
+                                <input id="show_image" name="show_image" type="url" class="validate" required>
+                                <label for="show_image">Add Image Link here</label>
                             </div>
                         </div>
                     </div>
