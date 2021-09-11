@@ -45,8 +45,8 @@
             <!-- Edit show button -->
             {% if session.user|lower == show.posted_by|lower %}
             <div class="row center-align">
-                <a href="{{ url_for('edit_show', show_id=show._id) }}" class="btn-floating btn-large waves-effect waves-light green">Edit</a>
-                <a href="{{ url_for('delete_show', show_id=show._id) }}" class="btn-floating btn-large waves-effect waves-light red">Delete</a>
+                <a href="{{ url_for('edit_show', show_id=show._id) }}" class="show-btn">Edit</a>
+                <a href="{{ url_for('delete_show', show_id=show._id) }}" class="show-btn">Delete</a>
             </div>
             {% endif %}
         </div>
