@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,700;1,300&display=swap');
 
 body {
-    background: radial-gradient(64.72% 127.99% at 50% 50%, #ff9f1c 42.99%, #01161E 100%);
+    background: url(../Images/remote-control-table-with-tv-background\(1\).jpg);
     font-family: 'Roboto';
     display: flex;
     min-height: 100vh;
@@ -12,7 +12,14 @@ main {
     flex: 1 0 auto;
   }
 
+.page-title {
+    color: #fafafa;
+    font-weight: 500;
+    text-shadow: #fafafa;
+}
+
 .page-footer {
+    margin-top: 10px;
     background-color: black;
 }
 
@@ -32,6 +39,7 @@ main {
 .register-header {
     margin: 10px;
 }
+
 .main-card {
     background-color: #fafafa;
     color: black;
@@ -45,8 +53,18 @@ main {
 }
 
 .show-panel {
+    border: #001219;
     border-radius: 10px;
 }
+
+.card-image img {
+    border: #001219;
+    border-radius: 10px;
+    margin-left: 400px;
+    margin-top: 40px;
+    max-height: 200px;
+    box-shadow: 2px 2px 2px rgba(9, 0, 58, 0.5);
+  }
 
 .btn {
     background-color: #e71d36;
@@ -56,6 +74,17 @@ main {
 }
 
 .btn:hover {
+    background-color: #fdfffc;
+    color: black;
+    transform: scale(1.1);
+    transition: 6.0;
+}
+
+.like-btn {
+    color: #01161E;
+}
+
+.like-btn:hover {
     background-color: #fdfffc;
     color: black;
     transform: scale(1.1);
