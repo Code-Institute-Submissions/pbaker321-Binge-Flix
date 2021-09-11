@@ -166,17 +166,14 @@ def delete_show(show_id):
 
 
 # Like a Show
-@app.route("/like/<show_id>", methods=["GET", "POST"])
+@app.route('/like/<show_id>')
 def like(show_id):
-    if request.method == "POST":
-        likes = {
-            "show_likes": request.form.update("show_likes"+1),
-        }
-        mongo.db.shows.update({"_id": ObjectId(show_id)}, likes=likes)
-        flash("You edited a show!")
-
-    show = mongo.db.shows.find_one({"_id": ObjectId(show_id)})
-    return render_template("shows.html", show=show)
+    mongo.db.shows.find_one_and_update(
+        {'_id': ObjectId(show_id)},
+        {'$inc': {'likes': 1}}
+    )
+    likes = mongo.db.shows.find_one_or_404({'_id': ObjectId(show_id)})
+    return render_template('shows.html', like=likes)
 
 
 if __name__ == "__main__":
