@@ -75,6 +75,25 @@ main {
     box-shadow: 2px 2px 2px rgba(9, 0, 58, 0.5);
   }
 
+.search-bar {
+    background-color: #fafafa;
+    color: #001219;
+    border-radius: 20px;
+    height: 50px;
+    width: 100px;
+}
+
+.search-text {
+    color: #001219;
+}
+
+.srch-btn {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    margin-top: 15px;
+}
+
 .btn {
     background-color: #005f73;
     color: #fafafa;
