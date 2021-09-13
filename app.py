@@ -187,8 +187,7 @@ def like(show_id):
         {'_id': ObjectId(show_id)},
         {'$inc': {'likes': 1}}
     )
-    likes = mongo.db.shows.find_one_or_404({'_id': ObjectId(show_id)})
-    return render_template('shows.html', like=likes)
+    return redirect(url_for("get_shows"))
 
 
 # Disike a Show
