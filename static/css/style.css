@@ -125,7 +125,7 @@ main {
 .srch-btn:hover {
     cursor: pointer;
     transform: scale(1.1);
-    transition: 6.0;
+    transition: 2s;
 }
 
 .login-btn {
@@ -144,7 +144,7 @@ main {
     background-color: #fdfffc;
     color: #001219;
     transform: scale(1.1);
-    transition: 6.0;
+    transition: 2s;
 }
 
 .show-btn {
@@ -163,7 +163,7 @@ main {
     background-color: #fdfffc;
     color: #001219;
     transform: scale(1.1);
-    transition: 6.0;
+    transition: 2s;
 }
 
 .like-btn {
@@ -174,7 +174,7 @@ main {
     background-color: #fdfffc;
     color: #001219;
     transform: scale(1.1);
-    transition: 6.0;
+    transition: 2s;
 }
 
 
