@@ -1,7 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h1 class="center-align page-title">Edit A Show</h1>
+    <!-- Page Header -->
+    <div class="row center-align page-title">
+        <h1>Edit {{ show.show_name }}</h1>
+    </div>
 
         <!-- Edit a show form-->
         <div class="row">
@@ -21,7 +24,7 @@
                             <div class="input-field col s8 offset-m2">
                                 <i class="fas fa-pencil-alt"></i>
                                 <select id="genre_name" name="genre_name" class="validate" required>
-                                    <option value="" disabled>Select Genre</option>
+                                    <option value="{{ show.genre_name }}" disabled>Select Genre</option>
                                     {% for genre in genre_catergory %}
                                         {% if genre.genre_name == show.genre_name %}
                                             <option value="{{ genre.genre_name }}" selected>{{ genre.genre_name }}</option>
@@ -38,7 +41,7 @@
                             <div class="input-field col s8 offset-m2">
                                 <i class="fas fa-pencil-alt"></i>
                                 <select id="seasons" name="seasons" class="validate" required>
-                                    <option value="{{ show.seasons }}" disabled selected>{{ show.seasons }}</option>
+                                    <option value="{{ show.seasons }}" selected>{{ show.seasons }}</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -56,10 +59,10 @@
                             <div class="input-field col s8 offset-m2">
                                 <i class="fas fa-pencil-alt"></i>
                                 <select id="platform" name="platform" class="validate" required>
-                                    <option value="" disabled>Choose your platform</option>
+                                    <option value="{{ show.platform }}"  selected>{{ show.platform }}</option>
                                     {% for platform in platform_catergory %}
                                         {% if platform.platform_name == show.platform_name %}
-                                            <option value="{{ platform.platform_name }}" selected>{{ platform.platform_name }}</option>
+                                            <option value="{{ platform.platform_name }}">{{ platform.platform_name }}</option>
                                         {% else %}
                                             <option value="{{ platform.platform_name }}">{{ platform.platform_name }}</option>
                                         {% endif %}
@@ -82,8 +85,8 @@
                             <div class="input-field col s8 offset-m2">
                                 <i class="fas fa-pencil-alt"></i>
                                 <textarea id="review" name="review" value="{{ show.review }}"
-                                class="materialize-textarea" minlength="20" 
-                                maxlength="400" required></textarea>
+                                class="materialize-textarea validate" minlength="20" 
+                                maxlength="400" required>{{ show.review }}</textarea>
                                 <label for="review">
                                     Review
                                 </label>
@@ -95,7 +98,7 @@
                                 <i class="fas fa-image prefix"></i>
                                 <input id="show_image" name="show_image" value="{{ show.show_image }}
                                  type="url" class="validate" required>
-                                <label for="show_image">Add Image Link here</label>
+                                <label for="show_image"></label>
                             </div>
                         </div>
                     </div>
