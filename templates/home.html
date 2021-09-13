@@ -6,9 +6,6 @@
     </div>
 
     <div class="row">
-        <div class="col s12 m10 offset-m1">
-            <div class="main-card card home">
-                <div class="card-content center-align">
                     <span class="card-title center-align m-1">
                         <h1>Welcome!</h1>
                     </span>
@@ -18,10 +15,10 @@
                         You have a first act - the first third of the season - 
                         second act is the middle third, and you structure it like that.
                     </quote>
-                    <cite class="col s12 quote">~Guillermo del Toro~</cite>
+                    <cite class="col s12 quote center-align">~Guillermo del Toro~</cite>
                 </div>
-                <div class="row">
-                    <a href="{{ url_for('login') }}" class="col s12 m2 offset-m5 btn center-align">
+                <div class="row center-align">
+                    <a href="{{ url_for('login') }}" class="btn-floating btn-large waves-effect login-btn">
                         Log in <i class="fas fa-sign-in-alt"></i>
                     </a>
                 </div>
@@ -30,9 +27,6 @@
                     Not a Member? 
                     <a href="{{ url_for('register') }}" class="redirect-text">Register here!</a>
                     </p>
-                </div>
-            </div>
-        </div>
     </div>
 
 {% endblock %}

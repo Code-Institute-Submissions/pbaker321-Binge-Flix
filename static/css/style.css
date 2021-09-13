@@ -1,3 +1,5 @@
+/* -- General -- */
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,900&display=swap');
 
 body {
@@ -14,18 +16,33 @@ main {
     flex: 1 0 auto;
   }
 
-.page-title {
-    color: #001219;
-    font-size: 150%;
+/* -- Page Headings -- */
+
+.page-title h1 {
+    font-size: 200px;
+    color: #ae2012;
     font-weight: 900;
     font-style: italic;
     text-shadow: 2px 2px 2px rgba(111, 111, 114, 0.5);
 }
 
+.quote {
+    margin: 20px;
+    padding: 10px;
+}
+
+/* -- Footer -- */
+
 .page-footer {
     margin-top: 10px;
     background-color: #001219;
 }
+
+.footer-media {
+    color: #fafafa;
+}
+
+/* -- Nav Bar -- */
 
 .nav-bar {
     background-color: #001219;
@@ -43,26 +60,13 @@ main {
     text-shadow: 2px 2px 2px rgba(213, 212, 214, 0.5);
 }
 
-.register-header {
-    margin: 10px;
-}
+/* -- Cards -- */
 
 .main-card {
     background-color: #fafafa;
     color: #001219;
     margin-top: 25px;
     margin-bottom: 25px;
-    border-radius: 10px;
-}
-
-.flashes {
-    line-height: 3;
-}
-
-.show-panel {
-    background-color: #fafafa;
-    color: #001219;
-    border: #001219;
     border-radius: 10px;
 }
 
@@ -74,6 +78,14 @@ main {
     max-height: 200px;
     box-shadow: 2px 2px 2px rgba(9, 0, 58, 0.5);
   }
+
+/* -- Flash Text -- */
+
+.flashes {
+    line-height: 3;
+}
+
+/* -- Search Bar -- */  
 
 .search-bar {
     background-color: #fafafa;
@@ -87,6 +99,8 @@ main {
     color: #001219;
 }
 
+/* -- Buttons -- */
+
 .srch-btn {
     border-radius: 50%;
     height: 50px;
@@ -94,14 +108,25 @@ main {
     margin-top: 15px;
 }
 
-.btn {
-    background-color: #005f73;
-    color: #fafafa;
-    border-radius: 10px;
-    margin: 10px;
+.srch-btn:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: 6.0;
 }
 
-.btn:hover {
+.login-btn {
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    background-color: #005f73;
+    color: #fafafa;
+    border-color: #001219;
+    box-shadow: 2px 2px 2px rgba(9, 0, 58, 0.5);
+    margin: 10px;
+    padding: 10px;
+}
+
+.login-btn:hover {
     background-color: #fdfffc;
     color: #001219;
     transform: scale(1.1);
@@ -109,13 +134,22 @@ main {
 }
 
 .show-btn {
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
     background-color: #005f73;
     color: #fafafa;
     border-color: #001219;
-    border-radius: 10px;
     box-shadow: 2px 2px 2px rgba(9, 0, 58, 0.5);
     margin: 10px;
     padding: 10px;
+}
+
+.show-btn:hover {
+    background-color: #fdfffc;
+    color: #001219;
+    transform: scale(1.1);
+    transition: 6.0;
 }
 
 .like-btn {
@@ -129,11 +163,5 @@ main {
     transition: 6.0;
 }
 
-.quote {
-    margin: 20px;
-    padding: 10px;
-}
 
-.footer-media {
-    color: #fafafa;
-}
+

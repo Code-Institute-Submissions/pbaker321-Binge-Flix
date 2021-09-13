@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="center-align register-header page-title">Register Now!</h3>
+    <h3 class="center-align page-title">Register Now!</h3>
     <!-- Registration Form -->
     <div class="row">
         <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
@@ -36,7 +36,7 @@
             <!-- Submit Button -->
             <div class="row">
                 <div class="col s12 center-align">
-                    <button class="btn waves-effect waves-light" type="submit">
+                    <button class="btn-floating btn-large waves-effect login-btn" type="submit">
                         Submit
                         <i class="far fa-check-circle"></i>
                     </button>
