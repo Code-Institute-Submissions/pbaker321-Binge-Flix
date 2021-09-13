@@ -2,31 +2,28 @@
 {% block content %}
 
     <div class="row page-title center-align">
-        <h1>Binge Flix</h1>
+        <h1>BINGEFLIX</h1>
     </div>
 
     <div class="row">
-                    <span class="card-title center-align m-1">
-                        <h1>Welcome!</h1>
-                    </span>
-                    <quote class="col s12 m6 offset-m3 quote">
-                        TV now, you have to plan it: you structure it for binge watching, 
-                        meaning you structure the whole season like a three-act play. 
-                        You have a first act - the first third of the season - 
-                        second act is the middle third, and you structure it like that.
-                    </quote>
-                    <cite class="col s12 quote center-align">~Guillermo del Toro~</cite>
-                </div>
-                <div class="row center-align">
-                    <a href="{{ url_for('login') }}" class="btn-floating btn-large waves-effect login-btn">
-                        Log in <i class="fas fa-sign-in-alt"></i>
-                    </a>
-                </div>
-                <div class="row center-align">
-                    <p>
-                    Not a Member? 
-                    <a href="{{ url_for('register') }}" class="redirect-text">Register here!</a>
-                    </p>
+        <quote class="col s12 m6 offset-m3 quote">
+            TV now, you have to plan it: you structure it for binge watching, 
+            meaning you structure the whole season like a three-act play. 
+            You have a first act - the first third of the season - 
+            second act is the middle third, and you structure it like that.
+        </quote>
+        <cite class="col s12 quote center-align">~Guillermo del Toro~</cite>
+    </div>
+    <div class="row center-align">
+        <a href="{{ url_for('login') }}" class="btn-floating btn-large waves-effect login-btn">
+            Log in <i class="fas fa-sign-in-alt"></i>
+        </a>
+    </div>
+    <div class="row center-align">
+        <p>
+            Not a Member? 
+            <a href="{{ url_for('register') }}" class="redirect-text">Register here!</a>
+        </p>
     </div>
 
 {% endblock %}
