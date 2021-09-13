@@ -19,10 +19,26 @@
         <!-- Navbar -->
         <nav>
             <div class="nav-wrapper nav-bar">
-              <a href="{{ url_for('home') }}" class="brand-logo">Binge Flix</a>
-              <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i>
-              <ul class="right hide-on-med-and-down">
-                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <a href="{{ url_for('home') }}" class="brand-logo">Binge Flix</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                        {% if session.user %}
+                            <li><a href="{{ url_for('get_shows') }}">Trending</a></li>
+                            <li><a href="{{ url_for('add_shows') }}">Add A Show</a></li>
+                            <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+                            <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+                        {% else %}
+                            <li><a href="{{ url_for('login') }}">Log In</a></li>
+                            <li><a href="{{ url_for('register') }}">Register</a></li>
+                        {% endif %}
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Mobile Sidenav -->
+        <ul class="sidenav nav-style" id="mobile-demo">
+            <li><a href="{{ url_for('home') }}">Home</a></li>
                 {% if session.user %}
                     <li><a href="{{ url_for('get_shows') }}">Trending</a></li>
                     <li><a href="{{ url_for('add_shows') }}">Add A Show</a></li>
@@ -32,23 +48,7 @@
                     <li><a href="{{ url_for('login') }}">Log In</a></li>
                     <li><a href="{{ url_for('register') }}">Register</a></li>
                 {% endif %}
-              </ul>
-            </div>
-          </nav>
-
-        <!-- Mobile Sidenav -->
-        <ul class="sidenav nav-style" id="mobile-demo">
-            <li><a href="{{ url_for('home') }}">Home</a></li>
-            {% if session.user %}
-                <li><a href="{{ url_for('get_shows') }}">Trending</a></li>
-                <li><a href="{{ url_for('add_shows') }}">Add A Show</a></li>
-                <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-                <li><a href="{{ url_for('logout') }}">Log Out</a></li>
-            {% else %}
-                <li><a href="{{ url_for('login') }}">Log In</a></li>
-                <li><a href="{{ url_for('register') }}">Register</a></li>
-            {% endif %}
-          </ul>
+        </ul>
           
     </header>
 
@@ -94,7 +94,6 @@
         <div class="footer-copyright">
             <div class="container">
                 © 2021 Copyright Binge Flix
-                <a class="grey-text text-lighten-4 right" href="#!"><i class="fas fa-envelope"></i>Contact Us</a>
             </div>
         </div>
     </footer>
