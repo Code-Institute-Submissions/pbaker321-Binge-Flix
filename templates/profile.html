@@ -2,16 +2,8 @@
 {% block content %}
 
     <!-- Registration Form -->
-    <div class="row">
-        <div class="col s12 m8 offset-m2">
-            <div class="card-panel main-card">
-                <div class="row">
-                    <h3 class="center-align">
-                        {{ username }}'s Shows
-                    </h3>
-                </div>
-            </div>
-        </div>
+    <div class="center-align register-header page-heading">
+        <h1>{{ username}}'s Shows</h1>
     </div>
 
     {% for show in shows if session.user|lower == show.posted_by|lower %}

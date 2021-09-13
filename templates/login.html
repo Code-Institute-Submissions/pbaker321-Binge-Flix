@@ -1,7 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="center-align register-header page-heading">Log In Now!</h3>
+    <div class="center-align register-header page-heading">
+    <h1>Log In Now!</h1>
+    </div>
+
     <!-- Registration Form -->
     <div class="row">
         <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('login') }}">
