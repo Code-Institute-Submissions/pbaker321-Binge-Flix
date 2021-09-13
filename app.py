@@ -141,7 +141,8 @@ def add_shows():
     platform_catergory = mongo.db.platform_catergory.find().sort(
         "platform_name", 1)
     return render_template(
-        "add_shows.html", genre_catergory=genre_catergory, platform_catergory=platform_catergory)
+        "add_shows.html", genre_catergory=genre_catergory, 
+        platform_catergory=platform_catergory)
 
 
 # Edit Show
@@ -166,7 +167,9 @@ def edit_show(show_id):
         "genre_name", 1)
     platform_catergory = mongo.db.platform_catergory.find().sort(
         "platform_name", 1)
-    return render_template("edit_show.html", show=show, genre_catergory=genre_catergory, platform_catergory=platform_catergory)
+    return render_template(
+        "edit_show.html", show=show, genre_catergory=genre_catergory, 
+        platform_catergory=platform_catergory)
 
 
 # Delete Shows from DB
