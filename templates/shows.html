@@ -58,9 +58,25 @@
                     {% if session.user|lower == show.posted_by|lower %}
                     <div class="row center-align">
                         <a href="{{ url_for('edit_show', show_id=show._id) }}" class="btn-floating btn-large waves-effect show-btn">Edit</a>
-                        <a href="{{ url_for('delete_show', show_id=show._id) }}" class="btn-floating btn-large waves-effect show-btn">Delete</a>
+                        <button data-target="{{ show._id }}" type="button" class="btn-floating btn-large waves-effect show-btn modal-trigger">Delete</button>
                     </div>
                     {% endif %}
+                </div>
+            </div>
+            <!-- Modal Structure -->
+            <div id="{{ show._id }}" class="modal">
+                <div class="modal-content">
+                    <h4>WARNING!</h4>
+                    <p>Your about to delete <strong>{{ show.show_name }}!</strong></p>
+                </div>
+                <div class="modal-footer">
+                    <a href="#!" class="modal-action modal-close btn-flat">
+                    Cancel
+                    </a>
+                    <a href="{{ url_for('delete_show', show_id=show._id) }}" data-target="{{ show._id }}" 
+                    class="btn-floating btn-large waves-effect show-btn">
+                    Delete
+                    </a>
                 </div>
             </div>
         </div>   

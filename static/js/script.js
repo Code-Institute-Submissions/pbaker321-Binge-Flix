@@ -1,6 +1,7 @@
 $(document).ready(function () {    
     $('.sidenav').sidenav();
-    $('select').formSelect();        
+    $('select').formSelect();
+    $('.modal').modal();        
 
 /*
 Taken from the course for the dropdown menu
