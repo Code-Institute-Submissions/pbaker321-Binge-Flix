@@ -31,6 +31,14 @@ def get_shows():
     return render_template("shows.html", shows=shows)
 
 
+# Search bar function
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    shows = list(mongo.db.shows.find({"$text": {"$search": query}}))
+    return render_template("shows.html", shows=shows)
+
+
 # Registration Page
 @app.route("/register", methods=["GET", "POST"])
 def register():
