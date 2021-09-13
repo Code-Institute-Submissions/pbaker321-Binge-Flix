@@ -6,7 +6,6 @@ body {
     background: url(../Images/remote-control-table-with-tv-background\(2\).jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
-    font-family: 'Roboto';
     display: flex;
     min-height: 100vh;
     flex-direction: column;

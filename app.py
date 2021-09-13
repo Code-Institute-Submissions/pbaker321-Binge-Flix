@@ -27,7 +27,7 @@ def home():
 # Trending Shows
 @app.route("/get_shows")
 def get_shows():
-    shows = mongo.db.shows.find()
+    shows = list(mongo.db.shows.find())
     return render_template("shows.html", shows=shows)
 
 
@@ -197,6 +197,17 @@ def dislike(show_id):
     )
     dislikes = mongo.db.shows.find_one_or_404({'_id': ObjectId(show_id)})
     return render_template('shows.html', dislike=dislikes)
+
+
+# Error Handling
+@app.errorhandler(404)
+def page_not_found(error):
+    return render_template('error/404.html'), 404
+
+
+@app.errorhandler(500)
+def server_error(error):
+    return render_template('error/500.html'), 500
 
 
 if __name__ == "__main__":
