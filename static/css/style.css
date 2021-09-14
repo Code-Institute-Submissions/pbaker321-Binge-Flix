@@ -85,7 +85,6 @@ main {
 .card-image img {
     border: #001219;
     border-radius: 10px;
-    margin-left: 400px;
     margin-top: 40px;
     max-height: 200px;
     box-shadow: 2px 2px 2px rgba(9, 0, 58, 0.5);
@@ -97,14 +96,13 @@ main {
     line-height: 3;
 }
 
-/* -- Search Bar -- */  
+/* -- Search Bar  -- */ 
 
 .search-bar {
     background-color: #fafafa;
     color: #001219;
     border-radius: 20px;
-    height: 50px;
-    width: 100px;
+    height: 100px;
 }
 
 .search-text {
@@ -177,3 +175,28 @@ main {
 
 
 
+/* -- Media Queries -- */
+
+@media only screen and (max-width : 800px) {
+    .page-title h1 {
+        font-size: 100px;
+    }
+    .page-heading h1 {
+        font-size: 80px;
+    }
+    .home-text {
+        font-size: 22px;
+    }
+}
+
+@media only screen and (max-width : 400px) {
+    .page-title h1 {
+        font-size: 50px;
+    }
+    .page-heading h1 {
+        font-size: 80px;
+    }
+    .home-text {
+        font-size: 22px;
+    }
+}
