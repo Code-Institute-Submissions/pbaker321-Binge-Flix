@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block content %}
+
+        <!-- Page Header -->
+        <div class="row center-align page-heading">
+            <h1 class="center-align">{{ show.show_name }}</h1><br>
+        </div>
+
+
+        <!-- Card Panel with Show information -->
+        <div class="row">
+            <div class="col s10 m12">
+                <div class="card-panel main-card">
+                    <div class="row">
+                        <div class="col s6 m6 left">                                   
+                            <strong>Genre: </strong>{{ show.genre_name }}<br>
+                            <strong>No. Seasons: </strong>{{ show.seasons }}<br>
+                            <strong>Platform: </strong>{{ show.platform }}<br>
+                            <strong>Starring: </strong>{{ show.starring }}<br>
+                            <strong>Review: </strong>{{ show.review }}<br>
+                            <p><em>Posted by: {{ show.posted_by }}</em></p>
+                        </div>
+                        <div class="col s6 m6 card-image center-align">
+                            <img src="{{show.show_image}}" alt="Image of {{show.show_name}}">
+                        </div>
+                    </div>
+                    <!-- Like and dislike buttons, allows other users to interact -->
+                    <div class="row">
+                        <div class="col s12 m6 center-align">
+                            <a href="{{ url_for('like', show_id=show._id) }}" class="like-btn">Binge-worthy <i class="far fa-thumbs-up"></i></a>
+                            <span>{{ show.likes }}</span>
+                        </div>
+                        <div class="col s12 m6 center-align">
+                            <a href="{{ url_for('dislike', show_id=show._id) }}" class="like-btn">Unworthy <i class="far fa-thumbs-down"></i></a>
+                            <span>{{ show.dislikes }}</span>
+                        </div>
+                    </div>
+                    <!-- If session user. user can edit and delete shows they created -->
+                    {% if session.user|lower == show.posted_by|lower %}
+                    <div class="row center-align">
+                        <a href="{{ url_for('edit_show', show_id=show._id) }}" class="btn-floating btn-large waves-effect show-btn">Edit</a>
+                        <button data-target="{{ show._id }}" type="button" class="btn-floating btn-large waves-effect show-btn modal-trigger">Delete</button>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+            <!-- Modal Structure -->
+            <div id="{{ show._id }}" class="modal">
+                <div class="modal-content">
+                    <h4>WARNING!</h4>
+                    <p>Your about to delete <strong>{{ show.show_name }}!</strong></p>
+                </div>
+                <div class="modal-footer">
+                    <a href="#!" class="modal-action modal-close btn-flat">
+                    Cancel
+                    </a>
+                    <a href="{{ url_for('delete_show', show_id=show._id) }}" data-target="{{ show._id }}" 
+                    class="btn-floating btn-large waves-effect show-btn">
+                    Delete
+                    </a>
+                </div>
+            </div>
+        </div>   
+
+{% endblock %}

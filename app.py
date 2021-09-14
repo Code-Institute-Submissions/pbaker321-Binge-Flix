@@ -27,8 +27,15 @@ def home():
 # Trending Shows
 @app.route("/get_shows")
 def get_shows():
-    shows = list(mongo.db.shows.find())
+    shows = list(mongo.db.shows.find().sort("likes", -1))
     return render_template("shows.html", shows=shows)
+
+
+# Show Details
+@app.route("/show_details/<show_id>")
+def show_details(show_id):
+    show = mongo.db.shows.find_one({"_id": ObjectId(show_id)})
+    return render_template("show_details.html", show=show)
 
 
 # Search bar function
@@ -78,8 +85,6 @@ def login():
             if check_password_hash(
                     existing_user["password"], request.form.get("password")):
                         session["user"] = request.form.get("username").lower()
-                        flash("Welcome, {}".format(
-                            request.form.get("username")))
                         return redirect(url_for(
                             "profile", username=session["user"]))
             else:
