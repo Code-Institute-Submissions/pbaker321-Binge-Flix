@@ -36,6 +36,15 @@
                             <img src="{{show.show_image}}" alt="Image of {{show.show_name}}">
                             </a>
                         </div>
+                        <!-- Like and dislike buttons, allows other users to interact -->
+                        <div class="row">
+                            <div class="col s6 m6 center-align">
+                                <span>Binge-worthy <i class="far fa-thumbs-up"></i>{{ show.likes }}</span>
+                            </div>
+                            <div class="col s6 m6 center-align">
+                                <span>Unworthy <i class="far fa-thumbs-down"></i>{{ show.dislikes }}</span>
+                            </div>
+                        </div>
                     </div>
                 </div>          
             {% endfor %}
