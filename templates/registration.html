@@ -1,60 +1,62 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <div class="center-align page-heading">
-    <h1 class="center-align page-heading">Register Now!</h1>
-    </div>
+    <div class="home-card">
+        <div class="center-align page-heading">
+        <h1 class="center-align page-heading">Register Now!</h1>
+        </div>
 
-    <!-- Registration Form -->
-    <div class="row">
-        <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
-            <div class="card-panel main-card">
-                <!-- Username -->
-                <div class="row">
-                    <div class="input-field col s8 offset-m2">
-                        <i class="fas fa-user prefix"></i>
-                        <input id="username" name="username" type="text" minlength="5" 
-                        maxlength="10" pattern="^[a-zA-Z0-9]{5,10}$" class="validate" required>
-                        <label for="username">UserName (Required)</label>
+        <!-- Registration Form -->
+        <div class="row">
+            <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
+                <div class="card-panel main-card">
+                    <!-- Username -->
+                    <div class="row">
+                        <div class="input-field col s8 offset-m2">
+                            <i class="fas fa-user prefix"></i>
+                            <input id="username" name="username" type="text" minlength="5" 
+                            maxlength="10" pattern="^[a-zA-Z0-9]{5,10}$" class="validate" required>
+                            <label for="username">UserName (Required)</label>
+                        </div>
+                    </div>
+                    <!-- Password -->
+                    <div class="row">
+                        <div class="input-field col s8 offset-m2">
+                            <i class="fas fa-key prefix"></i>
+                            <input id="password" name="password" type="password" minlength="8" 
+                            maxlength="15" pattern="^[a-zA-Z0-9]{8,15}$" class="validate" required>
+                            <label for="password">Password (Required)</label>
+                            <span data-error="wrong" data-success="right">
+                                Please use 8-15 characters! Letters and numbers only!
+                            </span>
+                        </div>
+                    </div>
+                    <!-- Users Favourite Genre -->
+                    <div class="row">
+                        <div class="input-field col s8 offset-m2">
+                            <i class="fas fa-film prefix"></i>
+                            <input id="favourite_genre" name="favourite_genre" type="text" class="validate">
+                            <label for="favourite_genre">Favourite Genre (Optional)</label>
+                        </div>
                     </div>
                 </div>
-                <!-- Password -->
+                <!-- Submit Button -->
                 <div class="row">
-                    <div class="input-field col s8 offset-m2">
-                        <i class="fas fa-key prefix"></i>
-                        <input id="password" name="password" type="password" minlength="8" 
-                        maxlength="15" pattern="^[a-zA-Z0-9]{8,15}$" class="validate" required>
-                        <label for="password">Password (Required)</label>
-                        <span data-error="wrong" data-success="right">
-                            Please use 8-15 characters! Letters and numbers only!
-                          </span>
+                    <div class="col s12 center-align">
+                        <button class="btn-floating btn-large waves-effect login-btn" type="submit">
+                            Submit
+                            <i class="far fa-check-circle"></i>
+                        </button>
                     </div>
                 </div>
-                <!-- Users Favourite Genre -->
-                <div class="row">
-                    <div class="input-field col s8 offset-m2">
-                        <i class="fas fa-film prefix"></i>
-                        <input id="favourite_genre" name="favourite_genre" type="text" class="validate">
-                        <label for="favourite_genre">Favourite Genre (Optional)</label>
-                    </div>
+                <div class="row center-align register-text">
+                    <p>
+                        Already a Member? 
+                        <a href="{{ url_for('login') }}" class="redirect-text">Log In here!</a>
+                    </p>
                 </div>
-            </div>
-            <!-- Submit Button -->
-            <div class="row">
-                <div class="col s12 center-align">
-                    <button class="btn-floating btn-large waves-effect login-btn" type="submit">
-                        Submit
-                        <i class="far fa-check-circle"></i>
-                    </button>
-                </div>
-            </div>
-            <div class="row center-align">
-                <p>
-                    Already a Member? 
-                    <a href="{{ url_for('login') }}" class="redirect-text">Log In here!</a>
-                </p>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
 
 {% endblock %}
