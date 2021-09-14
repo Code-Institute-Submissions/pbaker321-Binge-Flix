@@ -15,6 +15,15 @@ main {
     flex: 1 0 auto;
   }
 
+.overlay {
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    z-index: -9999;
+}
+
 /* -- Page Headings -- */
 
 .page-title h1 {
@@ -200,36 +209,44 @@ main {
     transition: 2s;
 }
 
+/* -- Modal -- */
 
+.modal {
+    background-color: #001219;
+    color: #fafafa;
+    border-radius: 10px;
+    max-width: 300px;
+    min-height: 300px;
+}
 
 /* -- Media Queries -- */
 
 @media only screen and (max-width : 800px) {
-    .page-title h1 {
-        font-size: 100px;
-    }
-    .page-heading h1 {
-        font-size: 80px;
-    }
-    .home-text {
-        font-size: 22px;
-    }
+.page-title h1 {
+    font-size: 100px;
+}
+.page-heading h1 {
+    font-size: 80px;
+}
+.home-text {
+    font-size: 22px;
+}
 }
 
 @media only screen and (max-width : 400px) {
-    body {
-        min-height: auto;
-    }
-    .page-title h1 {
-        font-size: 50px;
-    }
-    .page-heading h1 {
-        font-size: 80px;
-    }
-    .home-text {
-        font-size: 22px;
-    }
-    .show-image img {
-        max-height: 300px;
-    }
+body {
+    min-height: auto;
+}
+.page-title h1 {
+    font-size: 50px;
+}
+.page-heading h1 {
+    font-size: 80px;
+}
+.home-text {
+    font-size: 22px;
+}
+.show-image img {
+     max-height: 300px;
+}
 }
