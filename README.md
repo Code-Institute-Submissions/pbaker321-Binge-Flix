@@ -134,6 +134,8 @@ To be added in the future:
 
 * A problem when registering or logging in, there seemed to be connection problems with the database. I realised I used incorrect code for the submit button.
 * Building the like button. I was incorrectly using the $inc operator, I had forgotten the qoutation marks.
+* On Mobile the trending page did not look good with all the information. I decided to create a new page with for show details. The trending page will just have the title, Image and posted information
+
 
 ## **Credits**
 
