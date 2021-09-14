@@ -12,7 +12,7 @@
                     <div class="card-panel main-card">
                         <!-- Show Name -->
                         <div class="row">
-                            <div class="input-field col s8 offset-m2">
+                            <div class="input-field col s12 m8 offset-m2">
                                 <i class="fas fa-pencil-alt"></i>
                                 <input id="show_name" name="show_name" value="{{ show.show_name }}"
                                  type="text" class="validate" required>
@@ -21,7 +21,7 @@
                         </div>
                         <!-- Show Genre -->
                         <div class="row">
-                            <div class="input-field col s8 offset-m2">
+                            <div class="input-field col s12 m8 offset-m2">
                                 <i class="fas fa-pencil-alt"></i>
                                 <select id="genre_name" name="genre_name" class="validate" required>
                                     <option value="{{ show.genre_name }}" disabled>Select Genre</option>
@@ -38,7 +38,7 @@
                         </div>
                         <!-- Number of Seasons -->
                         <div class="row">
-                            <div class="input-field col s8 offset-m2">
+                            <div class="input-field col s12 m8 offset-m2">
                                 <i class="fas fa-pencil-alt"></i>
                                 <select id="seasons" name="seasons" class="validate" required>
                                     <option value="{{ show.seasons }}" selected>{{ show.seasons }}</option>
@@ -56,7 +56,7 @@
                         </div>
                         <!-- Show Platflorm -->
                         <div class="row">
-                            <div class="input-field col s8 offset-m2">
+                            <div class="input-field col s12 m8 offset-m2">
                                 <i class="fas fa-pencil-alt"></i>
                                 <select id="platform" name="platform" class="validate" required>
                                     <option value="{{ show.platform }}"  selected>{{ show.platform }}</option>
@@ -73,7 +73,7 @@
                         </div>
                         <!-- Shows Starring actor -->
                         <div class="row">
-                            <div class="input-field col s8 offset-m2">
+                            <div class="input-field col s12 m8 offset-m2">
                                 <i class="fas fa-pencil-alt"></i>
                                 <input id="starring" name="starring" value="{{ show.starring }}"
                                  type="text" class="validate" required>
@@ -82,7 +82,7 @@
                         </div>
                         <!-- Review Show Input -->
                         <div class="row">
-                            <div class="input-field col s8 offset-m2">
+                            <div class="input-field col s12 m8 offset-m2">
                                 <i class="fas fa-pencil-alt"></i>
                                 <textarea id="review" name="review" value="{{ show.review }}"
                                 class="materialize-textarea validate" minlength="20" 
@@ -94,7 +94,7 @@
                         </div>
                         <!-- Shows Image -->
                         <div class="row">
-                            <div class="input-field col s8 offset-m2">
+                            <div class="input-field col s12 m8 offset-m2">
                                 <i class="fas fa-image prefix"></i>
                                 <input id="show_image" name="show_image" value="{{ show.show_image }}
                                  type="url" class="validate" required>
@@ -105,11 +105,11 @@
                     <!-- Submit Button -->
                     <div class="row">
                         <div class="col s12 center-align">
-                            <a href="{{ url_for('get_shows') }}" class="btn red">
+                            <a href="{{ url_for('get_shows') }}" class="btn-floating btn-large waves-effect show-btn">
                                 Cancel
                                 <i class="far fa-times-circle"></i>
                             </a>
-                            <button class="btn green" type="submit">
+                            <button class="btn-floating btn-large waves-effect show-btn" type="submit">
                                 Edit
                                 <i class="far fa-check-circle"></i>
                             </button>
