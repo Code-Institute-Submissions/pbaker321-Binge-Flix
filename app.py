@@ -200,10 +200,9 @@ def like(show_id):
 def dislike(show_id):
     mongo.db.shows.find_one_and_update(
         {'_id': ObjectId(show_id)},
-        {'$inc': {'dislikes': 1}}
+        {'$inc': {'likes': -1}}
     )
-    dislikes = mongo.db.shows.find_one_or_404({'_id': ObjectId(show_id)})
-    return render_template('shows.html', dislike=dislikes)
+    return redirect(url_for("get_shows"))
 
 
 # Error Handling

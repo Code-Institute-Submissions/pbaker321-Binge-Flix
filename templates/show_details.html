@@ -30,11 +30,14 @@
                     <div class="row">
                         <div class="col s12 m6 center-align">
                             <a href="{{ url_for('like', show_id=show._id) }}" class="like-btn">Binge-worthy <i class="far fa-thumbs-up"></i></a>
-                            <span>{{ show.likes }}</span>
                         </div>
                         <div class="col s12 m6 center-align">
                             <a href="{{ url_for('dislike', show_id=show._id) }}" class="like-btn">Unworthy <i class="far fa-thumbs-down"></i></a>
-                            <span>{{ show.dislikes }}</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="center-align score">
+                            <span>Bingeworthy Score <strong>{{ show.likes }}</strong></span>
                         </div>
                     </div>
                     <!-- If session user. user can edit and delete shows they created -->
