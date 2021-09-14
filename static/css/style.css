@@ -140,6 +140,7 @@ main {
 /* -- Flash Text -- */
 
 .flashes {
+    color: #fafafa;
     line-height: 3;
 }
 
