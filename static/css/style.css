@@ -212,11 +212,12 @@ main {
 /* -- Modal -- */
 
 .modal {
-    background-color: #001219;
-    color: #fafafa;
+    background-color: #fafafa;
+    color: #001219;
     border-radius: 10px;
     max-width: 300px;
-    min-height: 300px;
+    min-height: 250px;
+    text-align: center;
 }
 
 /* -- Media Queries -- */
