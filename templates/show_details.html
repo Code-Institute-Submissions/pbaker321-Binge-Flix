@@ -9,19 +9,21 @@
 
         <!-- Card Panel with Show information -->
         <div class="row">
-            <div class="col s10 m12">
+            <div class="col s12">
                 <div class="card-panel main-card">
                     <div class="row">
-                        <div class="col s6 m6 left">                                   
-                            <strong>Genre: </strong>{{ show.genre_name }}<br>
-                            <strong>No. Seasons: </strong>{{ show.seasons }}<br>
-                            <strong>Platform: </strong>{{ show.platform }}<br>
-                            <strong>Starring: </strong>{{ show.starring }}<br>
-                            <strong>Review: </strong>{{ show.review }}<br>
-                            <p><em>Posted by: {{ show.posted_by }}</em></p>
-                        </div>
-                        <div class="col s6 m6 card-image center-align">
+                        <div class="col s12 show-image center-align">
                             <img src="{{show.show_image}}" alt="Image of {{show.show_name}}">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12 show-info center-align">                                   
+                            <h6>Genre: {{ show.genre_name }}</h6>
+                            <h6>No. Seasons: {{ show.seasons }}</h6>
+                            <h6>Platform: {{ show.platform }}</h6>
+                            <h6>Starring: {{ show.starring }}</h6>
+                            <h6>Review: {{ show.review }}</h6>
+                            <p><em>Posted by: {{ show.posted_by }}</em></p>
                         </div>
                     </div>
                     <!-- Like and dislike buttons, allows other users to interact -->
