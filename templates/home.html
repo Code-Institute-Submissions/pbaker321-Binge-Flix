@@ -1,29 +1,30 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <div class="row page-title center-align">
-            <h1>BINGEFLIX</h1>
-    </div>
-
-    <div class="row">
-        <p class="col s12 m6 offset-m3 home-text">
-            TV now, you have to plan it: you structure it for binge watching, 
-            meaning you structure the whole season like a three-act play. 
-            You have a first act - the first third of the season - 
-            second act is the middle third, and you structure it like that.
-        </p>
-        <cite class="col s12 home-text center-align">~Guillermo del Toro~</cite>
-    </div>
-    <div class="row center-align">
-        <a href="{{ url_for('login') }}" class="btn-floating btn-large waves-effect login-btn">
-            Log in <i class="fas fa-sign-in-alt"></i>
-        </a>
-    </div>
-    <div class="row center-align">
-        <p>
-            Not a Member? 
-            <a href="{{ url_for('register') }}" class="redirect-text">Register here!</a>
-        </p>
+    <div class="card-panel home-card">
+        <div class="row page-title center-align">
+                <h1>BINGEFLIX</h1>
+        </div>
+        <div class="row">
+            <p class="col s12 m6 offset-m3 home-text">
+                TV now, you have to plan it: you structure it for binge watching, 
+                meaning you structure the whole season like a three-act play. 
+                You have a first act - the first third of the season - 
+                second act is the middle third, and you structure it like that.
+            </p>
+            <cite class="col s12 home-text center-align">~Guillermo del Toro~</cite>
+        </div>
+        <div class="row center-align">
+            <a href="{{ url_for('login') }}" class="btn-floating btn-large waves-effect login-btn">
+                Log in <i class="fas fa-sign-in-alt"></i>
+            </a>
+        </div>
+        <div class="row center-align register-text">
+            <p>
+                Not a Member? 
+                <a href="{{ url_for('register') }}" class="redirect-text">Register here!</a>
+            </p>
+        </div>
     </div>
 
 {% endblock %}
