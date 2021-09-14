@@ -8,9 +8,9 @@
 
     <!-- Search Bar -->
     <div class="row">
-        <form action="{{ url_for('search') }}" method="post" class="col s12 search-bar">
+        <form action="{{ url_for('search') }}" method="post" class="col s12 m6 search-bar offset-m3">
             <div class="row valign-wrapper center-align">
-                <div class="input-field col s9 m10">
+                <div class="input-field col s9 m6">
                     <input type="text" name="query" id="query" minlength="3" required>
                     <label for="query">Search For Shows by Name</label>
                 </div>
@@ -24,58 +24,26 @@
     </div>
 
     {% if shows|length > 0 %}
-        {% for show in shows %}
-        <!-- Card Panel with Show information -->
+        <!-- Card Panel with Show --> 
         <div class="row">
-            <div class="col s10 m12">
-                <div class="card-panel main-card">
-                    <div class="row">
-                        <div class="col s6 m6 left">         
-                            <h5 class="center-align">{{ show.show_name }}</h5><br>
+            {% for show in shows %}       
+                <div class="col s12 m4">
+                    <div class="card-panel main-card">
+                        <div class="row center-align">        
+                            <h5 class="">{{ show.show_name }}</h5>
                             <p><em>Posted by: {{ show.posted_by }}</em></p>
-                        </div>
-                        <div class="col s6 m6 card-image center-align">
+                            <a href="{{ url_for('show_details', show_id=show._id) }}" class="card-image">
                             <img src="{{show.show_image}}" alt="Image of {{show.show_name}}">
+                            </a>
                         </div>
                     </div>
-                    <!-- Like and dislike buttons, allows other users to interact -->
-                    <div class="row">
-                        <div class="col s12 m6 center-align">
-                            <a href="{{ url_for('show_details', show_id=show._id) }}" class="btn-floating btn-large waves-effect show-btn">See Details</a>
-                        </div>
-                    </div>
-                    <!-- If session user. user can edit and delete shows they created -->
-                    {% if session.user|lower == show.posted_by|lower %}
-                    <div class="row center-align">
-                        
-                        <a href="{{ url_for('edit_show', show_id=show._id) }}" class="btn-floating btn-large waves-effect show-btn">Edit</a>
-                        <button data-target="{{ show._id }}" type="button" class="btn-floating btn-large waves-effect show-btn modal-trigger">Delete</button>
-                    </div>
-                    {% endif %}
-                </div>
-            </div>
-            <!-- Modal Structure -->
-            <div id="{{ show._id }}" class="modal">
-                <div class="modal-content">
-                    <h4>WARNING!</h4>
-                    <p>Your about to delete <strong>{{ show.show_name }}!</strong></p>
-                </div>
-                <div class="modal-footer">
-                    <a href="#!" class="modal-action modal-close btn-flat">
-                    Cancel
-                    </a>
-                    <a href="{{ url_for('delete_show', show_id=show._id) }}" data-target="{{ show._id }}" 
-                    class="btn-floating btn-large waves-effect show-btn">
-                    Delete
-                    </a>
-                </div>
-            </div>
-        </div>   
-        {% endfor %}
+                </div>          
+            {% endfor %}
+        </div> 
     {% else %}
         <div class="row center-align page-heading">
             <h1>No Results Found!</h1>
         </div>
-    {% endif %}    
+    {% endif %}   
 
 {% endblock %}
