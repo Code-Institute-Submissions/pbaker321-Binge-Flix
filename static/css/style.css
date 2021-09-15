@@ -254,3 +254,21 @@ body {
      max-height: 300px;
 }
 }
+
+@media only screen and (max-width : 300px) {
+    body {
+        min-height: auto;
+    }
+    .page-title h1 {
+        font-size: 40px;
+    }
+    .page-heading h1 {
+        font-size: 40px;
+    }
+    .home-text {
+        font-size: 12px;
+    }
+    .show-image img {
+         max-height: 200px;
+    }
+    }
