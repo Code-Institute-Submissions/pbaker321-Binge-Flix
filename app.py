@@ -153,28 +153,33 @@ def add_shows():
 # Edit Show
 @app.route("/edit-show/<show_id>", methods=["GET", "POST"])
 def edit_show(show_id):
-    if request.method == "POST":
-        submit = {
-            "show_name": request.form.get("show_name"),
-            "genre_name": request.form.get("genre_name"),
-            "seasons": request.form.get("seasons"),
-            "platform": request.form.get("platform"),
-            "starring": request.form.get("starring"),
-            "review": request.form.get("review"),
-            "show_image": request.form.get("show_image"),
-            "posted_by": session["user"]
-        }
-        mongo.db.shows.update({"_id": ObjectId(show_id)}, submit)
-        flash("You edited a show!")
+    if "user" in session:
 
-    show = mongo.db.shows.find_one({"_id": ObjectId(show_id)})
-    genre_catergory = mongo.db.genre_catergory.find().sort(
-        "genre_name", 1)
-    platform_catergory = mongo.db.platform_catergory.find().sort(
-        "platform_name", 1)
-    return render_template(
+        if request.method == "POST":
+            submit = {
+                "show_name": request.form.get("show_name"),
+                "genre_name": request.form.get("genre_name"),
+                "seasons": request.form.get("seasons"),
+                "platform": request.form.get("platform"),
+                "starring": request.form.get("starring"),
+                "review": request.form.get("review"),
+                "show_image": request.form.get("show_image"),
+                "posted_by": session["user"]
+            }
+            mongo.db.shows.update({"_id": ObjectId(show_id)}, submit)
+            flash("You edited a show!")
+
+        show = mongo.db.shows.find_one({"_id": ObjectId(show_id)})
+        genre_catergory = mongo.db.genre_catergory.find().sort(
+            "genre_name", 1)
+        platform_catergory = mongo.db.platform_catergory.find().sort(
+            "platform_name", 1)
+        return render_template(
         "edit_show.html", show=show, genre_catergory=genre_catergory, 
         platform_catergory=platform_catergory)
+
+    flash("Access denied. You can't edit other user's shows.")
+    return redirect(url_for("get_shows"))
 
 
 # Delete Shows from DB
@@ -210,12 +215,12 @@ def dislike(show_id):
 # Error Handling
 @app.errorhandler(404)
 def page_not_found(error):
-    return render_template('error/404.html'), 404
+    return render_template('404.html'), 404
 
 
 @app.errorhandler(500)
 def server_error(error):
-    return render_template('error/500.html'), 500
+    return render_template('500.html'), 500
 
 
 if __name__ == "__main__":
