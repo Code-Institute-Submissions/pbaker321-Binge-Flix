@@ -92,8 +92,8 @@ The Wireframes can be found [here](https://www.figma.com/file/5F65S2c3ZgqiyoLLFo
 ### **Future Features**
 To be added in the future:
 
-* Users to be able to comment on other users comments
-* Users to like or dilike tose comments
+* Users to be able to comment on other users reviews
+* Users to like or dislike those comments
 * Users can click on the show to watch it.(Providing user has the appropriate apps)
 * Users can link to sites like IMBD or wikipedia
 
@@ -128,7 +128,23 @@ To be added in the future:
 
 ## **Testing**
 
+
+### ***HTML Validation***
+
+### ***CSS Validation***
+
+### ***JavaScript Validation***
+
+### ***Python Validation***
+
 ## **Deployment**
+
+
+### ***How to Deploy on Heroku***
+
+### ***How to Clone the Repo***
+
+### ***Connect to MongoDB***
 
 ## **Issues**
 
