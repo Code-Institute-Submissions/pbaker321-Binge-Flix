@@ -14,7 +14,7 @@
                         <!-- Show Name -->
                         <div class="row">
                             <div class="input-field col s12 m8 offset-m2">
-                                <i class="fas fa-pencil-alt"></i>
+                                <i class="fas fa-pencil-alt prefix"></i>
                                 <input id="show_name" name="show_name" value="{{ show.show_name }}"
                                  type="text" class="validate" required>
                                 <label for="show_name">Show Name</label>
@@ -23,7 +23,7 @@
                         <!-- Show Genre -->
                         <div class="row">
                             <div class="input-field col s12 m8 offset-m2">
-                                <i class="fas fa-pencil-alt"></i>
+                                <i class="fas fa-pencil-alt prefix"></i>
                                 <select id="genre_name" name="genre_name" class="validate" required>
                                     <option value="{{ show.genre_name }}" disabled>Select Genre</option>
                                     {% for genre in genre_catergory %}
@@ -40,7 +40,7 @@
                         <!-- Number of Seasons -->
                         <div class="row">
                             <div class="input-field col s12 m8 offset-m2">
-                                <i class="fas fa-pencil-alt"></i>
+                                <i class="fas fa-pencil-alt prefix"></i>
                                 <select id="seasons" name="seasons" class="validate" required>
                                     <option value="{{ show.seasons }}" selected>{{ show.seasons }}</option>
                                     <option value="1">1</option>
@@ -58,7 +58,7 @@
                         <!-- Show Platflorm -->
                         <div class="row">
                             <div class="input-field col s12 m8 offset-m2">
-                                <i class="fas fa-pencil-alt"></i>
+                                <i class="fas fa-pencil-alt prefix"></i>
                                 <select id="platform" name="platform" class="validate" required>
                                     <option value="{{ show.platform }}"  selected>{{ show.platform }}</option>
                                     {% for platform in platform_catergory %}
@@ -75,7 +75,7 @@
                         <!-- Shows Starring actor -->
                         <div class="row">
                             <div class="input-field col s12 m8 offset-m2">
-                                <i class="fas fa-pencil-alt"></i>
+                                <i class="fas fa-pencil-alt prefix"></i>
                                 <input id="starring" name="starring" value="{{ show.starring }}"
                                  type="text" class="validate" required>
                                 <label for="starring">Starring</label>
@@ -84,7 +84,7 @@
                         <!-- Review Show Input -->
                         <div class="row">
                             <div class="input-field col s12 m8 offset-m2">
-                                <i class="fas fa-pencil-alt"></i>
+                                <i class="fas fa-pencil-alt prefix"></i>
                                 <textarea id="review" name="review" value="{{ show.review }}"
                                 class="materialize-textarea validate" minlength="20" 
                                 maxlength="400" required>{{ show.review }}</textarea>
