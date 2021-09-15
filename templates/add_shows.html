@@ -14,7 +14,8 @@
                     <div class="row">
                         <div class="input-field col s12 m8 offset-m2">
                             <i class="fas fa-pencil-alt prefix"></i>
-                            <input id="show_name" name="show_name" type="text" class="validate" required>
+                            <input id="show_name" name="show_name" type="text" pattern="^[a-zA-Z0-9]{5,10}$" 
+                            class="validate" required>
                             <label for="show_name">Show Name</label>
                         </div>
                     </div>
@@ -22,13 +23,13 @@
                     <div class="row">
                         <div class="input-field col s12 m8 offset-m2">
                             <i class="fas fa-pencil-alt prefix"></i>
-                            <select id="genre_name" name="genre_name" class="validate" required>
+                            <select id="genre" name="genre" class="validate" required>
                                 <option value="" disabled selected>Select Genre</option>
-                                {% for genre in genre_catergory %}
-                                    <option value="{{ genre.genre_name }}">{{ genre.genre_name }}</option>
+                                {% for genre in genres %}
+                                    <option value="{{ genre.genre }}">{{ genre.genre }}</option>
                                 {% endfor %}
                             </select>
-                            <label for="genre_name">Genre</label>
+                            <label for="genre">Genre</label>
                         </div>
                     </div>
                     <!-- Number of Seasons -->
@@ -55,8 +56,8 @@
                             <i class="fas fa-pencil-alt prefix"></i>
                             <select id="platform" name="platform" class="validate" required>
                                 <option value="" disabled selected>Choose your platform</option>
-                                {% for platform in platform_catergory %}
-                                    <option value="{{ platform.platform_name }}">{{ platform.platform_name }}</option>
+                                {% for platform in platforms %}
+                                    <option value="{{ platform.platform }}">{{ platform.platform }}</option>
                                 {% endfor %}
                             </select>
                             <label for="platform">Platform</label>
@@ -66,7 +67,8 @@
                     <div class="row">
                         <div class="input-field col s12 m8 offset-m2">
                             <i class="fas fa-pencil-alt prefix"></i>
-                            <input id="starring" name="starring" type="text" class="validate" required>
+                            <input id="starring" name="starring" type="text" pattern="^[a-zA-Z0-9]{5,10}$" 
+                            class="validate" required>
                             <label for="starring">Starring</label>
                         </div>
                     </div>
@@ -74,7 +76,8 @@
                     <div class="row">
                         <div class="input-field col s12 m8 offset-m2">
                             <i class="fas fa-pencil-alt prefix"></i>
-                            <textarea id="review" name="review" class="materialize-textarea" minlength="20" 
+                            <textarea id="review" name="review" pattern="^[a-zA-Z0-9]{5,10}$" 
+                            class="materialize-textarea" minlength="20" 
                             maxlength="400" required></textarea>
                             <label for="review">
                             Review

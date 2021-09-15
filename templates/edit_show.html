@@ -26,11 +26,11 @@
                                 <i class="fas fa-pencil-alt prefix"></i>
                                 <select id="genre_name" name="genre_name" class="validate" required>
                                     <option value="{{ show.genre_name }}" disabled>Select Genre</option>
-                                    {% for genre in genre_catergory %}
-                                        {% if genre.genre_name == show.genre_name %}
-                                            <option value="{{ genre.genre_name }}" selected>{{ genre.genre_name }}</option>
+                                    {% for genre in genres %}
+                                        {% if genre.genre == show.genre_name %}
+                                            <option value="{{ genre.genre }}" selected>{{ genre.genre }}</option>
                                         {% else %}
-                                            <option value="{{ genre.genre_name }}">{{ genre.genre_name }}</option>
+                                            <option value="{{ genre.genre }}">{{ genre.genre }}</option>
                                         {% endif %}
                                     {% endfor %}
                                 </select>
@@ -60,12 +60,12 @@
                             <div class="input-field col s12 m8 offset-m2">
                                 <i class="fas fa-pencil-alt prefix"></i>
                                 <select id="platform" name="platform" class="validate" required>
-                                    <option value="{{ show.platform }}"  selected>{{ show.platform }}</option>
-                                    {% for platform in platform_catergory %}
-                                        {% if platform.platform_name == show.platform_name %}
-                                            <option value="{{ platform.platform_name }}">{{ platform.platform_name }}</option>
+                                    <option value="{{ show.platform }}"  selected>Select Platform</option>
+                                    {% for platform in platforms %}
+                                        {% if platform.platform == show.platform %}
+                                            <option value="{{ platform.platform }}">{{ platform.platform }}</option>
                                         {% else %}
-                                            <option value="{{ platform.platform_name }}">{{ platform.platform_name }}</option>
+                                            <option value="{{ platform.platform }}">{{ platform.platform }}</option>
                                         {% endif %}
                                     {% endfor %}
                                 </select>
