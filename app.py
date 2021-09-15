@@ -151,26 +151,31 @@ def add_shows():
 # Edit Show
 @app.route("/edit-show/<show_id>", methods=["GET", "POST"])
 def edit_show(show_id):
-    if request.method == "POST":
-        submit = {
-            "show_name": request.form.get("show_name"),
-            "genre_name": request.form.get("genre_name"),
-            "seasons": request.form.get("seasons"),
-            "platform": request.form.get("platform"),
-            "starring": request.form.get("starring"),
-            "review": request.form.get("review"),
-            "show_image": request.form.get("show_image"),
-            "posted_by": session["user"]
-        }
-        mongo.db.shows.update({"_id": ObjectId(show_id)}, submit)
-        flash("You edited a show!")
-        return redirect(url_for("get_shows"))
-
     show = mongo.db.shows.find_one({"_id": ObjectId(show_id)})
-    genres = mongo.db.genres.find().sort("genre", 1)
-    platforms = mongo.db.platforms.find().sort("platform", 1)
-    return render_template(
-        "edit_show.html", show=show, genres=genres, platforms=platforms)
+    if session["user"].lower() == show["posted_by"].lower():
+
+        if request.method == "POST":
+            submit = {
+                "show_name": request.form.get("show_name"),
+                "genre_name": request.form.get("genre_name"),
+                "seasons": request.form.get("seasons"),
+                "platform": request.form.get("platform"),
+                "starring": request.form.get("starring"),
+                "review": request.form.get("review"),
+                "show_image": request.form.get("show_image"),
+                "posted_by": session["user"]
+            }
+            mongo.db.shows.update({"_id": ObjectId(show_id)}, submit)
+            flash("You edited a show!")
+            return redirect(url_for("get_shows"))
+        show = mongo.db.shows.find_one({"_id": ObjectId(show_id)})
+        genres = mongo.db.genres.find().sort("genre", 1)
+        platforms = mongo.db.platforms.find().sort("platform", 1)
+        return render_template(
+            "edit_show.html", show=show, genres=genres, platforms=platforms)
+
+    flash("You Cannot Edit another User's Show")
+    return redirect(url_for("get_shows"))
 
 
 # Delete Shows from DB
