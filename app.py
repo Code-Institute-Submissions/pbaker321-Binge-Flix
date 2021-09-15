@@ -192,7 +192,8 @@ def like(show_id):
         {'_id': ObjectId(show_id)},
         {'$inc': {'likes': 1}}
     )
-    return redirect(url_for("get_shows"))
+    show = mongo.db.shows.find_one({"_id": ObjectId(show_id)})
+    return render_template("show_details.html", show=show)
 
 
 # Disike a Show
@@ -202,7 +203,8 @@ def dislike(show_id):
         {'_id': ObjectId(show_id)},
         {'$inc': {'likes': -1}}
     )
-    return redirect(url_for("get_shows"))
+    show = mongo.db.shows.find_one({"_id": ObjectId(show_id)})
+    return render_template("show_details.html", show=show)
 
 
 # Error Handling
