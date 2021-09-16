@@ -96,27 +96,28 @@ To be added in the future:
 * Users to like or dislike those comments
 * Users can click on the show to watch it.(Providing user has the appropriate apps)
 * Users can link to sites like IMBD or wikipedia
+Possibly link to IMBD API
 
 
 ## **Technologies**
 
 
 ### **Languages**
-* HTML
-* CSS
-* JavaScript
-* Python
+* [HTML](https://www.w3schools.com/html/)
+* [CSS](https://www.w3schools.com/css/default.asp)
+* [JavaScript](https://www.w3schools.com/js/default.asp)
+* [Python](https://www.w3schools.com/python/default.asp)
 
 ### **Libraries & Frameworks**
-* Flask
-* jQuery
-* PyMongo
-* Jinja
-* Materialize
-* Werkzeug
+* [Flask](https://flask.palletsprojects.com/en/2.0.x/)
+* [jQuery](https://jquery.com/)
+* [PyMongo](https://pymongo.readthedocs.io/en/stable/)
+* [Jinja](https://jinja.palletsprojects.com/en/3.0.x/)
+* [Materialize](https://materializecss.com)
+* [Werkzeug](https://werkzeug.palletsprojects.com/en/2.0.x/)
 
 ### **Wireframes**
-* Figma
+* [Figma](https://www.figma.com/file/5F65S2c3ZgqiyoLLFoxLgj/Binge-Flix?node-id=0%3A1)
 
 ### **Tools**
 * [MongoDB](https://www.mongodb.com/) The Database
@@ -131,11 +132,51 @@ To be added in the future:
 
 ### ***HTML Validation***
 
+[W3C Markup Validator](https://validator.w3.org/)
+* 0 Errors found
+* 0 Warnings found
+
+![html test](static/images/html-test.jpg)
+
 ### ***CSS Validation***
+
+[W3C Jigsaw](https://jigsaw.w3.org/css-validator/)
+* No Errors found
+* 1 Warning about the font import(IGNORED)
 
 ### ***JavaScript Validation***
 
+[JShint](https://jshint.com/)
+* 0 Errors found
+* 2 Warnings which cannot be changed as will break the code.
+
 ### ***Python Validation***
+
+[PEP8online](http://pep8online.com/)
+* 0 Errors found
+* 1 warning about white space on line 3. 
+
+### ***Website Compatability***
+
+|   	|   **Chrome**	|   **FireFox**	|   **Opera**	|   **Edge**	|
+|---	|---	        |---	        |---	        |---	        |
+|   **Forms**	|   &#9745;	|   &#9745;	|   &#9745;	|   &#9745;	|
+|   **Text**	|   &#9745;	|   &#9745;	|   &#9745;	|   &#9745;	|
+|   **Images**	|  &#9745; 	|  &#9745; 	|  &#9745; 	|   &#9745; |
+|   **Links**	|   &#9745;	|   &#9745;	|   &#9745;	|   &#9745;	|
+|   **Buttons**	|   &#9745;	|   &#9745;	|   &#9745;	|   &#9745;	|
+
+
+### ***Device Responsiveness***
+
+|   	|   **<1200px**	|   **<1000px**	|   **<800px**	|   **<350px**	|
+|---	|---	        |---	        |---	        |---	        |
+|   **Forms**	|   &#9745;	|   &#9745;	|   &#9745;	|   &#9745;	|
+|   **Text**	|   &#9745;	|   &#9745;	|   &#9745;	|   &#9745;	|
+|   **Images**	|  &#9745; 	|  &#9745; 	|  &#9745; 	|   &#9745; |
+|   **Links**	|   &#9745;	|   &#9745;	|   &#9745;	|   &#9745;	|
+|   **Buttons**	|   &#9745;	|   &#9745;	|   &#9745;	|   &#9745;	|
+
 
 ## **Deployment**
 
@@ -149,17 +190,29 @@ To be added in the future:
 ## **Issues**
 
 * A problem when registering or logging in, there seemed to be connection problems with the database. I realised I used incorrect code for the submit button.
-* Building the like button. I was incorrectly using the $inc operator, I had forgotten the qoutation marks.
-* On Mobile the trending page did not look good with all the information. I decided to create a new page with for show details. The trending page will just have the title, Image and posted information
+
+* Building the like button. I was incorrectly using the $inc operator, I had forgotten the qoutation marks. I also had problems with the like counter resetting when a show had been edited. i fixed this with $set before the information that i wanted edited.
+
+* On Mobile the trending page did not look good with all the information. I decided to create a new page with for show details. The trending page will just have the title, Image and posted information.
+
+* Issued with non users or non session users being able to edit and delete by changing the URL. Added safeguards.
 
 
 ## **Credits**
 
 ### **Code**
 * Code Institute Backend Developement Task Manager Project by Tim Nelson: I followed along to put in the basics and modified to suit my site.
+* [Materialize](https://materializecss.com) For Nav bar, Forms, Footer and geral responsiveness
+
 ### **Media**
 * AWS: For the stock pictures used by users
+* [Am I Responsive](http://ami.responsivedesign.is/)
+
 ### **Other**
+* [YouTube](https://www.youtube.com/): More videos than i can remember!! But basically to give me extra knowledge when faced with a challenge.
+* Stackoverflow: For problem solving.
+* [W3 Schools](https://www.w3schools.com/)
+
 ### **Acknowledgements**
 * My Mentor Precious
 * Fatima, Sean, Michael, John & Jo From the Code Institute.
