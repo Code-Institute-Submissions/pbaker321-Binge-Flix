@@ -201,7 +201,6 @@ Possibly link to IMBD API
 
 ![html test fix](static/readme_files/html-test-fix.png)
 
-
 ### ***CSS Validation***
 
 [W3C Jigsaw](https://jigsaw.w3.org/css-validator/)
@@ -260,9 +259,46 @@ Possibly link to IMBD API
 
 ### ***How to Deploy on Heroku***
 
+The website is hosted and deployed by [Heroku](https://www.heroku.com/home).
+Everything is deployed from the master branch and updates automatically whenever the branch is updated in GitHub.
+
+1. Log or register into Heroku
+2. Go to your dashboard.
+3. Click on the "New"  -> "Create new app" button located right under the navbar.
+4. Choose a unique name for your app. (Once a name is taken, it cannot be used again.)
+5. Choose a region (preferably close to where you are located. I chose Europe).
+6. Next you will see the overview page of your app.
+7. Click on the "Deploy" button.
+8. On "deployment method" connect to github.
+9. On "app connected to GitHub" select the appropriate repo.
+10. Click on Settings tab.
+11. Reveal Config vars.
+12. Here we configure the IP, MONGO_DBNAME, MONGO_URI, PORT, SECRET_KEY values (As with the env.py file, these are not not public).
+14. Click "Enable Automatic Deploys"
+15. Click on "Deploy Branch".
+16. Click "View" to launch the app. 
+
 ### ***How to Clone the Repo***
 
-### ***Connect to MongoDB***
+If you want to clone the repository into a local file you can by:
+
+ 1. Find the repo in github.
+ 2. Click the button "code".
+ 3. Copy the URL by clicking on the clipboard.
+ 4. In the IDE of your choice open gitbash.
+ 5. Change the current working directory to the location where you want the cloned directory to be made.
+ 6. Type git clone, and then paste the URL copied from Github
+ 7. Press enter and the local clone will be created.
+ 8. After opening the folder you should create a new file in the root directory, name it env.py
+ 9. In env.py you can set your environment variables.  
+    ``` import os
+      import os
+
+      os.environ.setdefault("IP", "<your value>")
+      os.environ.setdefault("PORT", "<your value>")
+      os.environ.setdefault("SECRET_KEY", "<your value>")
+      os.environ.setdefault("MONGO_URI", "<your value>")
+      os.environ.setdefault("MONGO_DBNAME", "<your value>")
 
 <div align="center"><a href="#top">🔝</a></div>
 
