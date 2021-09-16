@@ -25,7 +25,7 @@
                             <div class="input-field col s12 m8 offset-m2">
                                 <i class="fas fa-pencil-alt prefix"></i>
                                 <select id="genre_name" name="genre_name" class="validate" required>
-                                    <option value="{{ show.genre_name }}" disabled>Select Genre</option>
+                                    <option value="{{ show.genre_name }}" disabled>{{ show.genre_name }}</option>
                                     {% for genre in genres %}
                                         {% if genre.genre == show.genre_name %}
                                             <option value="{{ genre.genre }}" selected>{{ genre.genre }}</option>
@@ -42,7 +42,7 @@
                             <div class="input-field col s12 m8 offset-m2">
                                 <i class="fas fa-pencil-alt prefix"></i>
                                 <select id="seasons" name="seasons" class="validate" required>
-                                    <option value="{{ show.seasons }}" selected>{{ show.seasons }}</option>
+                                    <option value="{{ show.seasons }}" disbled>{{ show.seasons }}</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -60,7 +60,7 @@
                             <div class="input-field col s12 m8 offset-m2">
                                 <i class="fas fa-pencil-alt prefix"></i>
                                 <select id="platform" name="platform" class="validate" required>
-                                    <option value="{{ show.platform }}"  selected>Select Platform</option>
+                                    <option value="{{ show.platform }}"  disabled>{{ show.platform }}</option>
                                     {% for platform in platforms %}
                                         {% if platform.platform == show.platform %}
                                             <option value="{{ platform.platform }}">{{ platform.platform }}</option>
@@ -85,9 +85,8 @@
                         <div class="row">
                             <div class="input-field col s12 m8 offset-m2">
                                 <i class="fas fa-pencil-alt prefix"></i>
-                                <textarea id="review" name="review" value="{{ show.review }}"
-                                class="materialize-textarea validate" minlength="20" 
-                                maxlength="400" required>{{ show.review }}</textarea>
+                                <textarea id="review" name="review" class="materialize-textarea validate" 
+                                minlength="20" maxlength="400" required>{{ show.review }}</textarea>
                                 <label for="review">
                                     Review
                                 </label>
@@ -104,10 +103,10 @@
                         </div>
                         <!-- Like and dislike -->
                         <div class="row like-edit">
-                            <div class="col s12 m6 center-align">
+                            <div class="col s12 m6 center-align validate">
                                 <span>Binge-worthy <i class="far fa-thumbs-up"></i>{{ show.likes }}</span>
                             </div>
-                            <div class="col s12 m6 center-align">
+                            <div class="col s12 m6 center-align validate">
                                 <span>Unworthy <i class="far fa-thumbs-down"></i>{{ show.dislikes }}</span>
                             </div>
                         </div>
@@ -120,28 +119,10 @@
                                 Cancel
                                 <i class="far fa-times-circle"></i>
                             </a>
-                            <button data-target="{{ show._id }}" 
-                            class="btn-floating btn-large waves-effect show-btn btn-text modal-trigger" type="submit">
+                            <button class="btn-floating btn-large waves-effect show-btn btn-text modal-trigger" type="submit">
                                 Edit
                                 <i class="far fa-check-circle"></i>
                             </button>
-                        </div>
-                    </div>
-                    <!-- Modal Structure -->
-                    <div id="{{ show._id }}" class="modal">
-                        <div class="modal-content">
-                            <h4>WARNING!</h4>
-                            <p>Your about to edit <strong>{{ show.show_name }}!</strong></p>
-                        </div>
-                        <div class="modal-footer modal-style">
-                            <a href="{{ url_for('get_shows') }}" 
-                            class="modal-action modal-close btn-floating btn-large waves-effect show-btn btn-text center-align">
-                            Cancel
-                            </a>
-                            <a href="{{ url_for('edit_show', show_id=show._id) }}" data-target="{{ show._id }}" 
-                            class="btn-floating btn-large waves-effect show-btn btn-text center-align">
-                            Edit
-                            </a>
                         </div>
                     </div>
                 </form>

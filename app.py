@@ -19,7 +19,7 @@ mongo = PyMongo(app)
 
 
 # Home Page
-@app.route("/")
+@app.route("/home")
 def home():
     return render_template("home.html")
 
@@ -121,7 +121,7 @@ def logout():
     # Remove user from session cookies
     flash("You are now logged out")
     session.pop("user")
-    return redirect(url_for("login"))
+    return redirect(url_for("home"))
 
 
 # Add a Show
@@ -155,17 +155,21 @@ def edit_show(show_id):
     if session["user"].lower() == show["posted_by"].lower():
 
         if request.method == "POST":
-            submit = {
-                "show_name": request.form.get("show_name"),
-                "genre_name": request.form.get("genre_name"),
-                "seasons": request.form.get("seasons"),
-                "platform": request.form.get("platform"),
-                "starring": request.form.get("starring"),
-                "review": request.form.get("review"),
-                "show_image": request.form.get("show_image"),
-                "posted_by": session["user"]
-            }
-            mongo.db.shows.update({"_id": ObjectId(show_id)}, submit)
+            show_db = mongo.db.shows
+            show_db.update_one({
+                "_id": ObjectId(show_id),
+            }, {
+                "$set": {
+                    "show_name": request.form.get("show_name"),
+                    "genre_name": request.form.get("genre_name"),
+                    "seasons": request.form.get("seasons"),
+                    "platform": request.form.get("platform"),
+                    "starring": request.form.get("starring"),
+                    "review": request.form.get("review"),
+                    "show_image": request.form.get("show_image"),
+                    "posted_by": session["user"],
+                }
+            })
             flash("You edited a show!")
             return redirect(url_for("get_shows"))
         show = mongo.db.shows.find_one({"_id": ObjectId(show_id)})
@@ -181,8 +185,14 @@ def edit_show(show_id):
 # Delete Shows from DB
 @app.route("/delete_show/<show_id>")
 def delete_show(show_id):
-    mongo.db.shows.remove({"_id": ObjectId(show_id)})
-    flash("Show Has Been Deleted!")
+    show = mongo.db.shows.find_one({"_id": ObjectId(show_id)})
+    if session["user"].lower() == show["posted_by"].lower():
+
+        mongo.db.shows.remove({"_id": ObjectId(show_id)})
+        flash("Show Has Been Deleted!")
+        return redirect(url_for("get_shows"))
+
+    flash("You Cannot Delete another User's Show")
     return redirect(url_for("get_shows"))
 
 
