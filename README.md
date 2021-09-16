@@ -157,10 +157,10 @@ Possibly link to IMBD API
 
 
 ### **Languages**
-* [HTML](https://www.w3schools.com/html/)
-* [CSS](https://www.w3schools.com/css/default.asp)
-* [JavaScript](https://www.w3schools.com/js/default.asp)
-* [Python](https://www.w3schools.com/python/default.asp)
+![HTML5](https://img.shields.io/badge/HTML5%20-%23E34F26.svg?&style=for-the-badge&logo=HTML5&logoColor=FFFFFF)
+![CSS3](https://img.shields.io/badge/CSS3%20-%231572B6.svg?&style=for-the-badge&logo=CSS3&logoColor=FFFFFF)
+![JavaScript](https://img.shields.io/badge/JavaScript%20-%23323330.svg?&style=for-the-badge&logo=JavaScript&logoColor=F7DF1E)
+![PYTHON](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=yellow)
 
 ### **Libraries & Frameworks**
 * [Flask](https://flask.palletsprojects.com/en/2.0.x/)
@@ -335,6 +335,6 @@ If you want to clone the repository into a local file you can by:
 * My Mentor Precious
 * Fatima, Sean, Michael, John & Jo From the Code Institute.
 * [Thiago Hardt](https://github.com/ThiagoHardt) For Listening to my moaning and giving advice.
-* Daphne and Mike fellow students on slack for advice.
+* Daphne and Mike fellow students on slack for
 
 <div align="center"><a href="#top">🔝</a></div>
