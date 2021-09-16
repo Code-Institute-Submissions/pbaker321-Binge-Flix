@@ -14,6 +14,7 @@
             </p>
             <cite class="col s12 home-text center-align">~Guillermo del Toro~</cite>
         </div>
+        {% if not session.user %}
         <div class="row center-align">
             <a href="{{ url_for('login') }}" class="btn-floating btn-large waves-effect show-btn">
                 Log in <i class="fas fa-sign-in-alt"></i>
@@ -25,6 +26,7 @@
                 <a href="{{ url_for('register') }}" class="redirect-text">Register here!</a>
             </p>
         </div>
+        {% endif %}
     </div>
 
 {% endblock %}
