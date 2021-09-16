@@ -12,7 +12,7 @@ The live version can be found [here.](http://binge-flix-project.herokuapp.com)
 
 <img src="/workspace/Binge-Flix/static/readme_files/response.jpg" alt="html-test" width="65%" height="65%">
 
-:open_file_folder: Table of Contents
+:file_folder: Table of Contents
 ======
 
 **<details><summary>UX</summary>**
@@ -59,7 +59,8 @@ The live version can be found [here.](http://binge-flix-project.herokuapp.com)
 </details>
 <br>
 
-## **UX**
+:bust_in_silhouette: UX
+======
 
 
 A responsive App. Allowing the user to review and rate TV series across all platforms. The 
@@ -92,7 +93,8 @@ user will also have their own profile, and record of reviews and ratings.
 The Wireframes can be found [here](https://www.figma.com/file/5F65S2c3ZgqiyoLLFoxLgj/Binge-Flix?node-id=0%3A1).
 
 
-## **Features**
+:electron: Features
+======
 
 
 ### **Exsisting Features**
@@ -148,7 +150,8 @@ Possibly link to IMBD API
 
 <div align="center"><a href="#top">🔝</a></div>
 
-## **Technologies**
+:computer: Technologies
+======
 
 
 ### **Languages**
@@ -179,7 +182,8 @@ Possibly link to IMBD API
 
 <div align="center"><a href="#top">🔝</a></div>
 
-## **Testing**
+:stethoscope: Testing
+======
 
 
 ### ***HTML Validation***
@@ -248,7 +252,8 @@ Possibly link to IMBD API
 
 <div align="center"><a href="#top">🔝</a></div>
 
-## **Deployment**
+:computer:  Deployment
+=====
 
 
 ### ***How to Deploy on Heroku***
@@ -259,7 +264,8 @@ Possibly link to IMBD API
 
 <div align="center"><a href="#top">🔝</a></div>
 
-## **Issues**
+:biohazard: Issues
+======
 
 * A problem when registering or logging in, there seemed to be connection problems with the database. I realised I used incorrect code for the submit button.
 
@@ -271,7 +277,8 @@ Possibly link to IMBD API
 
 <div align="center"><a href="#top">🔝</a></div>
 
-## **Credits**
+:copyright: Credits
+======
 
 ### **Code**
 * Code Institute Backend Developement Task Manager Project by Tim Nelson: I followed along to put in the basics and modified to suit my site.
