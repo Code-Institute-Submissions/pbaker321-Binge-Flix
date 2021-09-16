@@ -10,6 +10,54 @@ Each user will have their own profile created upon registering. A user can edite
 
 The live version can be found [here.](http://binge-flix-project.herokuapp.com)
 
+<img src="/workspace/Binge-Flix/static/readme_files/response.jpg" alt="html-test" width="65%" height="65%">
+
+:open_file_folder: Table of Contents
+======
+
+**<details><summary>UX</summary>**
+* [_Target Users_](#target-users)
+* [_User Stories_](#user-stories)
+</details>
+
+**<details><summary>Features</summary>**
+* [_Existing Features_](#existing-features)
+* [_Features for the future_](#future-features)
+</details>
+
+**<details><summary>Technologies</summary>**
+* [_Languages_](#languages)
+* [_Libraries and frameworks_](#libraries-and-frameworks)
+* [_Wireframes_](#wireframes)
+* [_Tools_](#tools)
+</details>
+
+**<details><summary>Testing and Bugs</summary>**
+* [_HTML Validation_](#html-validation)
+* [_CSS Validation_](#css-validation)
+* [_JavaScript Validation_](#javascript-validation)
+* [_Python Validation_](#python-validation)
+* [_Website Compatability_](#website-compatability)
+* [_Device Responsiveness_](#device-responsiveness)
+</details>
+
+**<details><summary>Deployment</summary>**
+* [_How to deploy on Heroku_](#how-to-deploy-on-heroku)
+* [_How to clone the Repo_](#how-to-clone-the-repo)
+* [_Connect to MongoDB_](#connect-to-mongodb)
+</details>
+
+**<details><summary>Issues</summary>**
+* [_Issues_](#issues)
+</details>
+
+**<details><summary>Credits</summary>**
+* [_Code_](#code)
+* [_Media_](#media)
+* [_Other_](#other)
+* [_Acknowledgements_](#acknowledgements)
+</details>
+<br>
 
 ## **UX**
 
@@ -39,7 +87,7 @@ user will also have their own profile, and record of reviews and ratings.
 * As a User I want to be able to search shows by keywords
 * As a User I want to able to use the site on different platforms
 
-  
+<div align="center"><a href="#top">🔝</a></div>  
 
 The Wireframes can be found [here](https://www.figma.com/file/5F65S2c3ZgqiyoLLFoxLgj/Binge-Flix?node-id=0%3A1).
 
@@ -98,6 +146,7 @@ To be added in the future:
 * Users can link to sites like IMBD or wikipedia
 Possibly link to IMBD API
 
+<div align="center"><a href="#top">🔝</a></div>
 
 ## **Technologies**
 
@@ -126,6 +175,9 @@ Possibly link to IMBD API
 * [Gitpod](https://gitpod.io) Development
 * [Freepik](https://www.freepik.com) Homepage Image
 * [coolor.co](https://coolors.co) Color Palattes
+* [Lightroom](https://lightroom.adobe.com/)
+
+<div align="center"><a href="#top">🔝</a></div>
 
 ## **Testing**
 
@@ -133,26 +185,41 @@ Possibly link to IMBD API
 ### ***HTML Validation***
 
 [W3C Markup Validator](https://validator.w3.org/)
-* 0 Errors found
-* 0 Warnings found
 
-![html test](static/images/html-test.jpg)
+<img src="/workspace/Binge-Flix/static/readme_files/html-test.jpg" alt="html-test" width="65%" height="65%">
+
+* 0 Errors found
+* 1 Warning found
+
+* Fixed by removing section and replcing with a div on the base.html page.
+
+<img src="/workspace/Binge-Flix/static/readme_files/html-test-fix.jpg" alt="html-test" width="65%" height="65%">
+
 
 ### ***CSS Validation***
 
 [W3C Jigsaw](https://jigsaw.w3.org/css-validator/)
+
+<img src="/workspace/Binge-Flix/static/readme_files/css-test.jpg" alt="html-test" width="65%" height="65%">
+
 * No Errors found
 * 1 Warning about the font import(IGNORED)
 
 ### ***JavaScript Validation***
 
 [JShint](https://jshint.com/)
+
+<img src="/workspace/Binge-Flix/static/readme_files/js-hint.jpg" alt="html-test" width="65%" height="65%">
+
 * 0 Errors found
 * 2 Warnings which cannot be changed as will break the code.
 
 ### ***Python Validation***
 
 [PEP8online](http://pep8online.com/)
+
+<img src="/workspace/Binge-Flix/static/readme_files/pep8.jpg" alt="html-test" width="65%" height="65%">
+
 * 0 Errors found
 * 1 warning about white space on line 3. 
 
@@ -177,6 +244,9 @@ Possibly link to IMBD API
 |   **Links**	|   &#9745;	|   &#9745;	|   &#9745;	|   &#9745;	|
 |   **Buttons**	|   &#9745;	|   &#9745;	|   &#9745;	|   &#9745;	|
 
+<img src="/workspace/Binge-Flix/static/readme_files/response.jpg" alt="html-test" width="65%" height="65%">
+
+<div align="center"><a href="#top">🔝</a></div>
 
 ## **Deployment**
 
@@ -186,6 +256,8 @@ Possibly link to IMBD API
 ### ***How to Clone the Repo***
 
 ### ***Connect to MongoDB***
+
+<div align="center"><a href="#top">🔝</a></div>
 
 ## **Issues**
 
@@ -197,6 +269,7 @@ Possibly link to IMBD API
 
 * Issued with non users or non session users being able to edit and delete by changing the URL. Added safeguards.
 
+<div align="center"><a href="#top">🔝</a></div>
 
 ## **Credits**
 
@@ -216,4 +289,5 @@ Possibly link to IMBD API
 ### **Acknowledgements**
 * My Mentor Precious
 * Fatima, Sean, Michael, John & Jo From the Code Institute.
-* 
+
+<div align="center"><a href="#top">🔝</a></div>
