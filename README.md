@@ -10,7 +10,9 @@ Each user will have their own profile created upon registering. A user can edite
 
 The live version can be found [here.](http://binge-flix-project.herokuapp.com)
 
-<img src="/workspace/Binge-Flix/static/readme_files/response.png" alt="response" width="65%" height="65%">
+
+![response img](static/readme_files/response.png)
+
 
 :file_folder: Table of Contents
 ======
