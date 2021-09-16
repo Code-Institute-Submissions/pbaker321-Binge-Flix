@@ -334,5 +334,7 @@ If you want to clone the repository into a local file you can by:
 ### **Acknowledgements**
 * My Mentor Precious
 * Fatima, Sean, Michael, John & Jo From the Code Institute.
+* [Thiago Hardt](https://github.com/ThiagoHardt) For Listening to my moaning and giving advice.
+* Daphne and Mike fellow students on slack for advice.
 
 <div align="center"><a href="#top">🔝</a></div>
