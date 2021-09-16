@@ -192,21 +192,21 @@ Possibly link to IMBD API
 
 [W3C Markup Validator](https://validator.w3.org/)
 
-<img src="/workspace/Binge-Flix/static/readme_files/html-test.jpg" alt="html-test" width="65%" height="65%">
+![html test](static/readme_files/html-test.png)
 
 * 0 Errors found
 * 1 Warning found
 
 * Fixed by removing section and replcing with a div on the base.html page.
 
-<img src="/workspace/Binge-Flix/static/readme_files/html-test-fix.png" alt="html-test" width="65%" height="65%">
+![html test fix](static/readme_files/html-test-fix.png)
 
 
 ### ***CSS Validation***
 
 [W3C Jigsaw](https://jigsaw.w3.org/css-validator/)
 
-<img src="/workspace/Binge-Flix/static/readme_files/css-test.png" alt="html-test" width="65%" height="65%">
+![css test](static/readme_files/css-test.png)
 
 * No Errors found
 * 1 Warning about the font import(IGNORED)
@@ -215,7 +215,7 @@ Possibly link to IMBD API
 
 [JShint](https://jshint.com/)
 
-<img src="/workspace/Binge-Flix/static/readme_files/js-hint.png" alt="html-test" width="65%" height="65%">
+![js hint](static/readme_files/js-hint.png)
 
 * 0 Errors found
 * 2 Warnings which cannot be changed as will break the code.
@@ -224,7 +224,7 @@ Possibly link to IMBD API
 
 [PEP8online](http://pep8online.com/)
 
-<img src="/workspace/Binge-Flix/static/readme_files/pep8.png" alt="html-test" width="65%" height="65%">
+![PEP8](static/readme_files/pep8.png)
 
 * 0 Errors found
 * 1 warning about white space on line 3. 
@@ -250,7 +250,7 @@ Possibly link to IMBD API
 |   **Links**	|   &#9745;	|   &#9745;	|   &#9745;	|   &#9745;	|
 |   **Buttons**	|   &#9745;	|   &#9745;	|   &#9745;	|   &#9745;	|
 
-<img src="/workspace/Binge-Flix/static/readme_files/response.png" alt="html-test" width="65%" height="65%">
+![response img](static/readme_files/response.png)
 
 <div align="center"><a href="#top">🔝</a></div>
 
