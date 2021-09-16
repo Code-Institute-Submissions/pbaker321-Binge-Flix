@@ -30,11 +30,11 @@
                 <div class="col s12 m4">
                     <div class="card-panel show-card">
                         <div class="row center-align">        
-                            <h5 class="">{{ show.show_name }}</h5>
+                            <h6 class="">{{ show.show_name }}</h6>
                             <p><em>Posted by: {{ show.posted_by }}</em></p>
-                            <a href="{{ url_for('show_details', show_id=show._id) }}" class="card-image">
-                            <img src="{{show.show_image}}" alt="Image of {{show.show_name}}">
-                            </a>
+                            <div class="row card-image">
+                                <img src="{{show.show_image}}" alt="Image of {{show.show_name}}">
+                            </div>
                         </div>
                         <!-- Likes -->
                         <div class="row">
@@ -42,6 +42,12 @@
                                 <span>Bingeworthy Score <strong>{{ show.likes }}</strong></span>
                             </div>
                         </div>
+                        {% if session.user %}
+                            <div class="center-align see-btn">
+                                <a href="{{ url_for('show_details', show_id=show._id) }}" 
+                                class="see-details">Go! See Details</a>
+                            </div>
+                        {% endif %}
                     </div>
                 </div>          
             {% endfor %}
