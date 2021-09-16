@@ -34,7 +34,7 @@ The live version can be found [here.](http://binge-flix-project.herokuapp.com)
 * [_Tools_](#tools)
 </details>
 
-**<details><summary>Testing and Bugs</summary>**
+**<details><summary>Testing</summary>**
 * [_HTML Validation_](#html-validation)
 * [_CSS Validation_](#css-validation)
 * [_JavaScript Validation_](#javascript-validation)
