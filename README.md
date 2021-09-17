@@ -257,27 +257,6 @@ Possibly link to IMBD API
 =====
 
 
-### ***How to Deploy on Heroku***
-
-The website is hosted and deployed by [Heroku](https://www.heroku.com/home).
-Everything is deployed from the master branch and updates automatically whenever the branch is updated in GitHub.
-
-1. Log or register into Heroku
-2. Go to your dashboard.
-3. Click on the "New"  -> "Create new app" button located right under the navbar.
-4. Choose a unique name for your app. (Once a name is taken, it cannot be used again.)
-5. Choose a region (preferably close to where you are located. I chose Europe).
-6. Next you will see the overview page of your app.
-7. Click on the "Deploy" button.
-8. On "deployment method" connect to github.
-9. On "app connected to GitHub" select the appropriate repo.
-10. Click on Settings tab.
-11. Reveal Config vars.
-12. Here we configure the IP, MONGO_DBNAME, MONGO_URI, PORT, SECRET_KEY values (As with the env.py file, these are not not public).
-14. Click "Enable Automatic Deploys"
-15. Click on "Deploy Branch".
-16. Click "View" to launch the app. 
-
 ### ***How to Clone the Repo***
 
 If you want to clone the repository into a local file you can by:
@@ -299,6 +278,32 @@ If you want to clone the repository into a local file you can by:
       os.environ.setdefault("SECRET_KEY", "<your value>")
       os.environ.setdefault("MONGO_URI", "<your value>")
       os.environ.setdefault("MONGO_DBNAME", "<your value>")
+
+10. In terminal window of your IDE type: pip3 freeze -- local > requirements.txt
+11. In termial window of your IDE type: python app.py > Procfile 
+
+### ***How to Deploy on Heroku***
+
+The website is hosted and deployed by [Heroku](https://www.heroku.com/home).
+Everything is deployed from the master branch and updates automatically whenever the branch is updated in GitHub.
+
+Before deploying to Heroku. Please ensure the env.py file, requirements.txt and the procfile have been set up on your local IDE.
+
+1. Log or register into Heroku
+2. Go to your dashboard.
+3. Click on the "New"  -> "Create new app" button located right under the navbar.
+4. Choose a unique name for your app. (Once a name is taken, it cannot be used again.)
+5. Choose a region (preferably close to where you are located. I chose Europe).
+6. Next you will see the overview page of your app.
+7. Click on the "Deploy" button.
+8. On "deployment method" connect to github.
+9. On "app connected to GitHub" select the appropriate repo.
+10. Click on Settings tab.
+11. Reveal Config vars.
+12. Here we configure the IP, MONGO_DBNAME, MONGO_URI, PORT, SECRET_KEY values (As with the env.py file, these are not not public).
+14. Click "Enable Automatic Deploys"
+15. Click on "Deploy Branch".
+16. Click "View" to launch the app. 
 
 <div align="center"><a href="#top">🔝</a></div>
 
