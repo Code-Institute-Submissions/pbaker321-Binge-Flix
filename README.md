@@ -50,7 +50,7 @@ The live version can be found [here.](http://binge-flix-project.herokuapp.com)
 </details>
 
 **<details><summary>Issues</summary>**
-* [_Issues_](#issues)
+* [_Bugs_](#bugs)
 </details>
 
 **<details><summary>Credits</summary>**
@@ -188,6 +188,23 @@ Possibly link to IMBD API
 ======
 
 
+### **User Stories Testing**
+
+1. As a User I want a clean and clear Website :white_check_mark:
+2. As a User I want to be able to navigate around the site with ease :white_check_mark:
+3. As a User I want to be able to use the website with ease with clear messages :white_check_mark:
+4. As a User I want to be able to create an account :white_check_mark:
+5. As a user I want to find my account history 
+    * This is the the User shows page showing what shows they added :white_check_mark:
+6. As a User I want to edit my show reviews :white_check_mark:
+7. As a User I want to delete my show reviews :white_check_mark:
+8. As a User I want to be able to update my profile :x:
+    * The user can edit and delete shows. No need to edit a profile.
+9. As a User I want to like or dislike reviewed shows :white_check_mark:
+10. As a User I want to be able to search shows by keywords  :white_check_mark:
+    * Can be searched by searching for a name
+* As a User I want to able to use the site on different platforms :white_check_mark:
+
 ### ***HTML Validation***
 
 [W3C Markup Validator](https://validator.w3.org/)
@@ -307,16 +324,45 @@ Before deploying to Heroku. Please ensure the env.py file, requirements.txt and 
 
 <div align="center"><a href="#top">🔝</a></div>
 
-:biohazard: Issues
+:biohazard: Bugs
 ======
 
-* A problem when registering or logging in, there seemed to be connection problems with the database. I realised I used incorrect code for the submit button.
+* A problem when registering or logging in, there seemed to be connection problems with the database.
+    * I realised I used incorrect code for the submit button.
 
-* Building the like button. I was incorrectly using the $inc operator, I had forgotten the qoutation marks. I also had problems with the like counter resetting when a show had been edited. i fixed this with $set before the information that i wanted edited.
+* The like button.
+    * I was incorrectly using the $inc operator, I had forgotten the qoutation marks.
+    * I also had problems with the like counter resetting when a show had been edited. i fixed this with "$set" before the information that i wanted edited on edit_shows.html.
 
-* On Mobile the trending page did not look good with all the information. I decided to create a new page with for show details. The trending page will just have the title, Image and posted information.
+* On Mobile version the trending page looked cluttered with all the information.
+    * I decided to create a new page with for show details. The trending page will just have the title, Image and posted information.
 
-* Issued with non users or non session users being able to edit and delete by changing the URL. Added safeguards.
+* Issued with non users or non session users being able to edit and delete by changing the URL.
+    * Added ```from functools import wraps``` and built a function:
+     ```
+    def login_required(f):
+    @wraps(f)
+    def wrapper(*args, **kwargs):
+        if "logged_in" in session:
+            return f(*args, **kwargs)
+        else:
+            return redirect("/")
+
+    return wrapper
+
+* And add ```@login_required``` to the appropriate routes.
+    * Also added:  
+    ```
+    if not session.get("user"):
+        return render_template("error_handlers/404.html")
+
+    To check if session user is appropiate for that route.
+
+* And of course the usual typos and minor errors that throw you off!!!
+    
+
+
+
 
 <div align="center"><a href="#top">🔝</a></div>
 
