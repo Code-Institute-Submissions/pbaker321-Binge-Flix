@@ -73,6 +73,7 @@ def register():
     return render_template("registration.html")
 
 
+# For pages that require a user to be logged in.
 def login_required(f):
     @wraps(f)
     def wrapper(*args, **kwargs):
@@ -119,6 +120,7 @@ def profile(username):
     username = mongo.db.user.find_one(
         {"username": session["user"]})["username"]
 
+    # Finds session users shows in DB
     if session["user"]:
         shows = list(mongo.db.shows.find().sort("_id", -1))
         users = mongo.db.user.find()
@@ -156,6 +158,7 @@ def add_shows():
         flash("You added a show!")
         return redirect(url_for("get_shows"))
 
+    # For the dropdown menus
     genres = mongo.db.genres.find().sort("genre", 1)
     platforms = mongo.db.platforms.find().sort("platform", 1)
     return render_template(
@@ -171,6 +174,7 @@ def edit_show(show_id):
     if not session.get("user"):
         return render_template("error_handlers/404.html")
 
+    # Updates the DB only the fields that are changed
     if request.method == "POST":
         show_db = mongo.db.shows
         show_db.update_one({
@@ -200,7 +204,7 @@ def edit_show(show_id):
 @app.route("/delete_show/<show_id>")
 @login_required
 def delete_show(show_id):
-    # Only posted by user can edit
+    # Only posted by user can delete
     if not session.get("user"):
         return render_template("error_handlers/404.html")
 
@@ -213,6 +217,7 @@ def delete_show(show_id):
 @app.route('/like/<show_id>')
 @login_required
 def like(show_id):
+    # Finds the show and adds 1
     mongo.db.shows.find_one_and_update(
         {'_id': ObjectId(show_id)},
         {'$inc': {'likes': 1}}
@@ -225,6 +230,7 @@ def like(show_id):
 @app.route('/dislike/<show_id>')
 @login_required
 def dislike(show_id):
+    # Finds the show and minus 1
     mongo.db.shows.find_one_and_update(
         {'_id': ObjectId(show_id)},
         {'$inc': {'likes': -1}}
