@@ -4,6 +4,7 @@ from flask import (
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+from functools import wraps
 from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
@@ -19,7 +20,7 @@ mongo = PyMongo(app)
 
 
 # Home Page
-@app.route("/home")
+@app.route("/")
 def home():
     return render_template("home.html")
 
@@ -72,6 +73,17 @@ def register():
     return render_template("registration.html")
 
 
+def login_required(f):
+    @wraps(f)
+    def wrapper(*args, **kwargs):
+        if "logged_in" in session:
+            return f(*args, **kwargs)
+        else:
+            return redirect("/")
+
+    return wrapper
+
+
 # Login Page
 @app.route("/login", methods=["GET", "POST"])
 def login():
@@ -102,6 +114,7 @@ def login():
 
 # Profile Page
 @app.route("/profile/<username>", methods=["GET", "POST"])
+@login_required
 def profile(username):
     username = mongo.db.user.find_one(
         {"username": session["user"]})["username"]
@@ -126,6 +139,7 @@ def logout():
 
 # Add a Show
 @app.route("/add_shows", methods=["GET", "POST"])
+@login_required
 def add_shows():
     if request.method == "POST":
         show = {
@@ -150,54 +164,54 @@ def add_shows():
 
 # Edit Show
 @app.route("/edit-show/<show_id>", methods=["GET", "POST"])
+@login_required
 def edit_show(show_id):
     show = mongo.db.shows.find_one({"_id": ObjectId(show_id)})
-    if session["user"].lower() == show["posted_by"].lower():
+    # Only posted by user can edit
+    if not session.get("user"):
+        return render_template("error_handlers/404.html")
 
-        if request.method == "POST":
-            show_db = mongo.db.shows
-            show_db.update_one({
-                "_id": ObjectId(show_id),
-            }, {
-                "$set": {
-                    "show_name": request.form.get("show_name"),
-                    "genre_name": request.form.get("genre_name"),
-                    "seasons": request.form.get("seasons"),
-                    "platform": request.form.get("platform"),
-                    "starring": request.form.get("starring"),
-                    "review": request.form.get("review"),
-                    "show_image": request.form.get("show_image"),
-                    "posted_by": session["user"],
-                }
-            })
-            flash("You edited a show!")
-            return redirect(url_for("get_shows"))
-        show = mongo.db.shows.find_one({"_id": ObjectId(show_id)})
-        genres = mongo.db.genres.find().sort("genre", 1)
-        platforms = mongo.db.platforms.find().sort("platform", 1)
-        return render_template(
-            "edit_show.html", show=show, genres=genres, platforms=platforms)
-
-    flash("You Cannot Edit another User's Show")
-    return redirect(url_for("get_shows"))
+    if request.method == "POST":
+        show_db = mongo.db.shows
+        show_db.update_one({
+            "_id": ObjectId(show_id),
+        }, {
+            "$set": {
+                "show_name": request.form.get("show_name"),
+                "genre_name": request.form.get("genre_name"),
+                "seasons": request.form.get("seasons"),
+                "platform": request.form.get("platform"),
+                "starring": request.form.get("starring"),
+                "review": request.form.get("review"),
+                "show_image": request.form.get("show_image"),
+                "posted_by": session["user"],
+            }
+        })
+        flash("You edited a show!")
+        return redirect(url_for("get_shows"))
+    show = mongo.db.shows.find_one({"_id": ObjectId(show_id)})
+    genres = mongo.db.genres.find().sort("genre", 1)
+    platforms = mongo.db.platforms.find().sort("platform", 1)
+    return render_template(
+        "edit_show.html", show=show, genres=genres, platforms=platforms)
 
 
 # Delete Shows from DB
 @app.route("/delete_show/<show_id>")
+@login_required
 def delete_show(show_id):
-    show = mongo.db.shows.find_one({"_id": ObjectId(show_id)})
-    if session["user"].lower() == show["posted_by"].lower():
+    # Only posted by user can edit
+    if not session.get("user"):
+        return render_template("error_handlers/404.html")
 
-        mongo.db.shows.remove({"_id": ObjectId(show_id)})
-        flash("Show Has Been Deleted!")
-        return redirect(url_for("get_shows"))
-
-    flash("You Cannot Delete another User's Show")
+    mongo.db.shows.remove({"_id": ObjectId(show_id)})
+    flash("Show Has Been Deleted!")
     return redirect(url_for("get_shows"))
 
 
 # Like a Show
 @app.route('/like/<show_id>')
+@login_required
 def like(show_id):
     mongo.db.shows.find_one_and_update(
         {'_id': ObjectId(show_id)},
@@ -209,6 +223,7 @@ def like(show_id):
 
 # Disike a Show
 @app.route('/dislike/<show_id>')
+@login_required
 def dislike(show_id):
     mongo.db.shows.find_one_and_update(
         {'_id': ObjectId(show_id)},
@@ -232,4 +247,4 @@ def server_error(error):
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
-            debug=True)
+            debug=False)
