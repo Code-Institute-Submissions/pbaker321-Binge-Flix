@@ -337,27 +337,6 @@ Before deploying to Heroku. Please ensure the env.py file, requirements.txt and 
 * On Mobile version the trending page looked cluttered with all the information.
     * I decided to create a new page with for show details. The trending page will just have the title, Image and posted information.
 
-* Issued with non users or non session users being able to edit and delete by changing the URL.
-    * Added ```from functools import wraps``` and built a function:
-     ```
-    def login_required(f):
-    @wraps(f)
-    def wrapper(*args, **kwargs):
-        if "logged_in" in session:
-            return f(*args, **kwargs)
-        else:
-            return redirect("/")
-
-    return wrapper
-
-* And add ```@login_required``` to the appropriate routes.
-    * Also added:  
-    ```
-    if not session.get("user"):
-        return render_template("error_handlers/404.html")
-
-    To check if session user is appropiate for that route.
-
 * And of course the usual typos and minor errors that throw you off!!!
     
 
