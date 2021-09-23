@@ -184,12 +184,12 @@ def edit_show(show_id):
 # Delete Shows from DB
 @app.route("/delete_show/<show_id>")
 def delete_show(show_id):
-    # Only posted by user can delete
-    if not session.get("user"):
-        return render_template("error_handlers/404.html")
+    show = mongo.db.shows.find_one({"_id": ObjectId(show_id)})
+    if session["user"].lower() == show["posted_by"].lower():
 
-    flash("You Cannot Delete another User's Show")
-    return redirect(url_for("get_shows"))
+        mongo.db.shows.remove({"_id": ObjectId(show_id)})
+        flash("Successfully Deleted")
+        return redirect(url_for("get_shows"))
 
 
 # Like a Show
